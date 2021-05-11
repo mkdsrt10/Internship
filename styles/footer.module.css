@@ -1,0 +1,139 @@
+.footer{
+    font-size: 1rem;
+    padding: 2rem;
+    border-top: 1px solid #ccc;
+    
+}
+.container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    
+}
+.container_content{
+    width: 70%;
+    display: flex;
+}
+.resources{
+    display: flex;
+    margin: 1rem  2rem 1rem 0rem;
+    flex-direction: column;
+
+}
+.resources_title{
+    font-size: 1.5rem;
+    color:  rgb(144, 107, 113);
+}
+.resources_item{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+
+}
+.About{
+    display: flex;
+    margin: 1rem  2rem 1rem 1rem;
+    flex-direction: column;
+
+}
+.About_title{
+    font-size: 1.5rem;
+    color: rgb(144, 107, 113);
+}
+.About_item{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+
+}
+.email{
+     margin: 1rem  2rem 1rem 1rem;
+}
+.email_title{
+    font-size: 1rem;
+    color: lightslategrey;
+}
+.email_input {
+  margin-top: 1rem;
+  padding: 0.4rem;
+  border: 2px solid pink;
+  border-color: pink;
+  font-size: 1rem;
+  width: 50%;
+}
+.email_input:focus {
+  outline: none !important;
+  border: 2px solid red;
+}
+.email_input_button{
+    font-size: 1rem;
+    height: 49px;
+    width: 100px;
+    background-color: grey;
+    color: white;
+    outline: none;
+    shape-outside: none;
+    box-shadow: none;
+}
+.email_input_button:hover{
+    background-color: rgb(92, 91, 91);
+}
+
+.copyright_container{
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_media_icon{
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right: 8rem;
+}
+@media all and (max-width: 700px)
+{
+    .footer{
+        font-size: 0.8rem;
+        padding: 0;
+    }
+    .social_media_icon{
+        width: 20%;
+        height: 25px;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    .container{
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .email{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .container_content{
+        width: 100%;
+        flex-direction: column;
+    }
+    .resources{
+        margin-left:1rem ;
+    }
+    .resources_item, .About_item{
+        font-size: 1rem;
+    }
+    .copyright_container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .social_media_icon{
+        width:50%;
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+    }
+}

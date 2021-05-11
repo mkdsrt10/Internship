@@ -1,0 +1,38 @@
+.container {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 200;
+}
+.title {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  font-weight: 400;
+}
+.image {
+  width: 30rem;
+  height: auto;
+  display: flex;
+}
+.body {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (max-width: 600px) {
+  .image {
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .body {
+    font-size: 0.7rem;
+  }
+}
