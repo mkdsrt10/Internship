@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/nextblog/node_modules
 /.pnp
 .pnp.js
 
@@ -45,7 +44,7 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
-aws-exports.js
+src/aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplifyconfiguration.dart
