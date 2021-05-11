@@ -1,6 +1,11 @@
 import '../styles/globals.css'
-import Navbar from "../components/Navbar";
 import Layout from "../components/Layout"
+import Amplify from "aws-amplify";
+import config from "../src/aws-exports";
+Amplify.configure({
+  ...config,
+  ssr: true,
+});
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

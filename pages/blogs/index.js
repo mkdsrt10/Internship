@@ -3,7 +3,7 @@ import ImageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
 import NavBar from "../../components/Navbar";
 import { useRouter } from "next/router";
-import Slide from "react-reveal/Slide"
+import Slide from "react-reveal/Slide";
 import styles from "../../styles/Allblogs.module.css";
 import { FaSearch } from "react-icons/fa";
 import Link from "next/link";
@@ -41,29 +41,29 @@ const AllBlogs = ({ blogs }) => {
             <h2>No Blogs to show</h2>
           ) : (
             updatedBlogs.map((blog, index) => (
-              <div
-                className={styles.blogContainer}
-                key={index}
-                onClick={() => {
-                  router.push(`/blogs/${blog.slug.current}`);
-                }}
-              >
-                <Slide bottom>
+              <Slide bottom key={index}>
+                <div
+                  className={styles.blogContainer}
+                  key={index}
+                  onClick={() => {
+                    router.push(`/blogs/${blog.slug.current}`);
+                  }}
+                >
                   <img
                     src={blog.mainImage}
                     alt="image"
                     className={styles.blog_image}
                   />
                   <p className={styles.blog_title}>{blog.title}</p>
-                  <p className={styles.blog_body}>
+                  <div className={styles.blog_body}>
                     <BlockContent
                       blocks={blog.body}
                       dataset="production"
                       projectId="vtwse9n7"
                     />
-                  </p>
-                </Slide>
-              </div>
+                  </div>
+                </div>
+              </Slide>
             ))
           )}
         </div>

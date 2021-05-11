@@ -29,7 +29,7 @@ export default function Home() {
       <div className={styles.donate}>
         {donateList.map((post, index) => {
           return (
-            <Slide bottom>
+            <Slide bottom key={index}>
             <div
               className={styles.postContainer}
               key={index}

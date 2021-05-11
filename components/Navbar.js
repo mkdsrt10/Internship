@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Slide from "react-reveal/Slide";
 import ReorderOutlinedIcon from "@material-ui/icons/ReorderOutlined";
+import { route } from "next/dist/next-server/server/router";
 const Navbar = () => {
   const router = useRouter();
   const [nav, setnav] = useState(false);
@@ -66,9 +67,20 @@ const Navbar = () => {
               </Link>
             </li>
           </nav>
+
           <div className={styles.toggle_button}>
             <button onClick={toggle_Handler}>
               <ReorderOutlinedIcon />
+            </button>
+          </div>
+          <div>
+            <button
+              className={styles.Login}
+              onClick={() => {
+                router.push("/auth/profile");
+              }}
+            >
+              LogIn
             </button>
           </div>
         </div>

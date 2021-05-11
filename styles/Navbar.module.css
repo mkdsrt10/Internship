@@ -7,7 +7,7 @@
   height: 80px;
   display: flex;
   color: white;
-  justify-content: space-between;
+  justify-content: space-around;
   cursor: pointer;
 }
 .a {
@@ -22,7 +22,8 @@
   background-color: #121212;
   width: 100%;
   text-decoration: none;
-  margin-left: 10rem;
+  margin-left: 6rem;
+  margin-right: 4rem;
   color: white;
   list-style: none;
   display: flex;
@@ -31,10 +32,30 @@
   justify-content: space-evenly;
 }
 .toggle_button {
+  width: fit-content;
   position: fixed;
   top: 0.75rem;
-  right: 1rem;
+  right: 7rem;
   display: none;
+}
+.Login{
+  width: 100px;
+  position: fixed;
+  top: 0.60rem;
+  right:1rem;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 400;
+  height: 50px;
+  background-color: rgb(185, 154, 114);
+  border:  transparent;
+  border-radius: 5px ;
+  cursor: pointer;
+  
+}
+.Login:hover {
+  background-color: rgb(126, 96, 63);
+
 }
 @media all and (max-width: 800px) {
   .Navbar {
