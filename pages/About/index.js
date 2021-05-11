@@ -5,8 +5,8 @@ const team = ["vipin", "vipn", "vipin"];
 const About = () => {
   return (
     <div className={styles.container}>
-      <div>
-        <img src="2.jpg" alt="logo" className={styles.top_image_div}></img>
+      <div className={styles.top_image_div}>
+        <img src="2.jpg" alt="logo" className={styles.top_image}/>
       </div>
       <div className={styles.image_title}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi aliquid
