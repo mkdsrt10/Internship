@@ -37,7 +37,7 @@ export default function Home() {
                 router.push("/blogs");
               }}
             >
-              <img src={"../1.jpg"} alt="image" />
+              <img src={"../1.jpg"} alt="image" className={styles.postContainer_image}/>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero
                 quam temporibus aspernatur veritatis eveniet dignissimos,
