@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  height: 88px;
+  justify-content: space-around;
+  cursor: pointer;
+  align-items: center;
+  background-color: #eff4f8;
+}
+.logo {
+  color: black;
+  font-size: 1.5rem;
+  margin-right: 5rem;
+  flex: 1;
+  margin-left: 96px;
+}
+.nav_items {
+  flex: 2;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  height: 23px;
+  justify-content: space-evenly;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.donate {
+}
+.how_it_works {
+}
+.faq {
+}
+.contactus {
+}
+@media all and (max-width: 700px) {
+  .nav_items {
+    display: none;
+  }
+  .logo {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+}
