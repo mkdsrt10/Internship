@@ -93,7 +93,94 @@
 .top_container_image {
   flex: 1;
 }
+.Impact_container {
+  margin-top: 2rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Impact_cotent_conainer {
+  width: 90%;
+  margin: 3rem auto 3rem auto;
+  display: flex;
+  flex-direction: row;
+}
+.Impact_content_left {
+  flex: 1;
+}
+.Impact_content_left_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
 
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.4;
+}
+.Impact_content_left_subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: -0.015em;
+  color: #182a43;
+  margin-top: 0.2rem;
+}
+.Impact_content_right {
+  flex: 1;
+  background-image: url(/home_impact_image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+.Impact_cotent_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 5rem;
+}
+.Impact_cotent_each_grid {
+  width: 13rem;
+  height: 6rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+.Impact_cotent_each_grid_top {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 62px;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.Impact_cotent_each_grid_bottom {
+  height: 3rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 135%;
+  /* or 24px */
+  margin-top: 0.2rem;
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.8;
+}
 @media all and (max-width: 700px) {
   .mainContainer {
     background-image: none;
@@ -111,7 +198,7 @@
     background-image: url(/pexels-liza-summer-6348123.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size:contain;
+    background-size: contain;
     background-attachment: scroll;
   }
   .fund_raise_in {

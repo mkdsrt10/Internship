@@ -1,6 +1,7 @@
 import styles from "../styles/home.module.css";
 import Coins from "../components/Coins";
 import What_we_do_container from "../components/What_we_do";
+import Impact_conatiner from "../components/Impact";
 import Link from "next/link";
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
       </div>
       <Coins />
       <What_we_do_container />
+      <Impact_conatiner/>
     </div>
   );
 };
