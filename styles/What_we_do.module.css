@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #F9FBFD;
 }
 .what_we_do_container_content {
   width: 80%;
@@ -46,11 +48,12 @@
 .what_we_do_grid_each {
   width: 450px;
   margin: 2rem;
-  background: #eff4f8;
+   background: #FFFFFF;;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
 }
 .what_we_do_grid_each_top {
   display: flex;
@@ -60,7 +63,6 @@
 }
 .what_we_do_image {
   flex: 1;
-  border-bottom: 2px solid #7bd5aa;
 }
 .what_we_do_topic {
   flex: 3;
@@ -85,5 +87,8 @@
   .what_we_do_grid_each{
     margin: 0.5rem;
     height: auto;
+  }
+  .what_we_do_text{
+    margin-bottom: 1rem;
   }
 }

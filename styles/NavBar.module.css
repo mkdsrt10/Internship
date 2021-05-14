@@ -1,4 +1,13 @@
+.container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+}
 .nav {
+  flex: 9;
   display: flex;
   height: 88px;
   justify-content: space-around;
@@ -13,7 +22,8 @@
   flex: 1;
   margin-left: 96px;
 }
-.nav_items {
+.nav_items,
+.nav_items_active {
   flex: 2;
   font-size: 0.9rem;
   display: flex;
@@ -30,20 +40,80 @@
 
   color: #182a43;
 }
-.donate {
+.nav_items_active {
+  display: none;
 }
-.how_it_works {
+.Hamburger {
+  color: black;
+  flex: 1;
+  position: absolute;
+  display: none;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
 }
-.faq {
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
 }
-.contactus {
+.Hamburger_change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
+
+.Hamburger_change .bar2 {
+  opacity: 0;
+}
+
+.Hamburger_change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
 @media all and (max-width: 700px) {
   .nav_items {
     display: none;
   }
   .logo {
-    margin-left: 1rem;
-    font-size: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  .nav_items {
+    display: none;
+  }
+  .Hamburger {
+    display: inline-block;
+    top: 1rem;
+  }
+  .Hamburger_change {
+    color: black;
+    flex: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  .nav {
+    display: block;
+  }
+  .nav_items_active {
+    text-align: center;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    margin-top: 4.5rem;
+    background-color: #eff4f8;
   }
 }

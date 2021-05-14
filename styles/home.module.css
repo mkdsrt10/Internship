@@ -4,12 +4,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: url(../public/background_girl.jpeg);
+  background: url(/background_girl.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: scroll;
-  margin-top: -60px;
+  margin-top: -10px;
 }
 .top_contianer {
   width: 100%;
@@ -97,9 +97,22 @@
 @media all and (max-width: 700px) {
   .mainContainer {
     background-image: none;
+    margin-top: 1.8rem;
   }
   .top_contianer {
-    flex-direction: column;
+    margin-top: 50px;
+    background-color: #eff4f8;
+    flex-direction: column-reverse;
+  }
+  .top_contianer_image {
+    background-color: #eff4f8;
+    flex: 4;
+    height: auto;
+    background-image: url(/pexels-liza-summer-6348123.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    background-attachment: scroll;
   }
   .fund_raise_in {
     font-size: 1.4rem;
@@ -113,11 +126,6 @@
   .top_contianer_content_title {
     width: 80%;
     margin: auto;
-  }
-  .coinContainer {
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    margin-top: 2rem;
   }
 }
