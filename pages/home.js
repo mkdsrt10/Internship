@@ -1,4 +1,6 @@
 import styles from "../styles/home.module.css";
+import Coins from "../components/Coins";
+import What_we_do_container from "../components/What_we_do";
 import Link from "next/link";
 const Home = () => {
   return (
@@ -22,52 +24,8 @@ const Home = () => {
           <div className={styles.top_contianer_image}></div>
         </div>
       </div>
-      <div className={styles.coinContainer}>
-        <img src="../image4.png" />
-        <img src="../image5.png" />
-        <img src="../image6.png" />
-        <img src="../image7.png" />
-
-        <img src="../image8.png" />
-      </div>
-      <div className={styles.what_we_do_container}>
-        <div className={styles.what_we_do_container_content}>
-          <div className={styles.what_we_do_title}>What we do</div>
-          <div className={styles.what_we_do_sub_title}>
-            Fundraising for the people and causes you care.
-          </div>
-          <div className={styles.what_we_do_grid_conatiner}>
-            <div className={styles.what_we_do_grid_each}>
-              <div>No Boundaries</div>
-              <div>
-                Raise funds from global audience without any friction, tax or
-                international boundaries.
-              </div>
-            </div>
-            <div className={styles.what_we_do_grid_each}>
-              <div>All Crypto Accepted</div>
-              <div>
-                We are providing the advancement of accepting almost all crypto
-                around the world.
-              </div>
-            </div>
-            <div className={styles.what_we_do_grid_each}>
-              <div>Helping NGOs</div>
-              <div>
-                We help social workers and NGOs on raising fund around the world
-                through blockchain.
-              </div>
-            </div>
-            <div className={styles.what_we_do_grid_each}>
-              <div>Spreading Awareness</div>
-              <div>
-                We are aimed at raising voices for social causes and help in
-                fighting poverty, and all other social foes.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Coins />
+      <What_we_do_container />
     </div>
   );
 };
