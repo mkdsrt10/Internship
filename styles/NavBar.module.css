@@ -62,6 +62,9 @@
   margin: 6px 0;
   transition: 0.4s;
 }
+.Hamburger_change{
+  display: none;
+}
 .Hamburger_change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
@@ -95,6 +98,7 @@
     top: 1rem;
   }
   .Hamburger_change {
+    display: inline-block;
     color: black;
     flex: 1;
     position: absolute;
