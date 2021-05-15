@@ -1,113 +1,333 @@
-.mainContainer {
-  margin-top: 5rem;
-  display: block;
-}
-.hero {
-  width: 95%;
-  margin: auto;
-}
-.vision_heading {
-  font-size: 2.5rem;
-  font-weight: 500;
-  width: 70%;
-}
-.vision_sub_heading {
-  width: 50%;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 300;
-}
-.top_images_div {
-  margin-top: 5rem;
-  width: 100%;
-  height: 400px;
-}
-.top_image {
-  width: 50%;
-  height: 400px;
-  float: right;
-  object-fit: cover;
-}
-.contribute_title {
-  margin: 3rem 0rem 4rem 0rem;
-  font-weight: 500;
-  font-size: 2rem;
-  text-align: center;
-}
-.donate {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-}
-.postContainer {
-  margin: 1.5rem 0.2rem 0.2rem 0.2rem;
-  width: 30%;
-  height: auto;
+.Root {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
-.how_we_do_this_title {
-  margin: 3rem 0 1rem 0;
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url(/background_girl.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  margin-top: -10px;
+}
+.top_contianer {
+  width: 100%;
+  height: Calc(100vh);
+  display: flex;
+  margin-top: 92px;
+  flex-direction: row;
+}
+.top_contianer_content {
+  flex: 1;
+}
+.top_contianer_content_title {
+  margin-left: 96px;
+  margin-top: 150px;
+}
+.fund_raise_in {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 59px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+}
+.cryptoCurrency {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 88px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #ef7c6e;
+}
+
+.need_for_funds {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 170%;
+  /* or 34px */
+
+  /* #272727 */
+
+  color: #182a43;
+}
+
+.start_now {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 312px;
+  height: 56px;
+  align-items: center;
+  padding: 15px 30px;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+.text {
+  font-family: DM Sans;
+  font-style: normal;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+.top_container_image {
+  flex: 1;
+}
+.Impact_container {
+  margin-top: 2rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Impact_cotent_conainer {
+  width: 90%;
+  margin: 3rem auto 3rem auto;
+  display: flex;
+  flex-direction: row;
+}
+.Impact_content_left {
+  flex: 1;
+}
+.Impact_content_left_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.4;
+}
+.Impact_content_left_subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: -0.015em;
+  color: #182a43;
+  margin-top: 0.2rem;
+}
+.Impact_content_right {
+  flex: 1;
+  background-image: url(/home_impact_image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+.Impact_cotent_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 5rem;
+}
+.Impact_cotent_each_grid {
+  width: 13rem;
+  height: 6rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+.Impact_cotent_each_grid_top {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 62px;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.Impact_cotent_each_grid_bottom {
+  height: 3rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 135%;
+  /* or 24px */
+  margin-top: 0.2rem;
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.8;
+}
+.case_study_container {
+  background: #f9fbfd;
+}
+.case_study_content_container {
+  margin-top: 5rem;
+}
+.case_study_content_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: capitalize;
+  color: #b3b3b3;
+}
+.case_study_content_subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #182a43;
+}
+.case_study_content_subtitle span {
+  color: #ef7c6e;
+}
+.case_study_content_grid {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+
+  flex-wrap: wrap;
+}
+.case_study_content_each_grid {
+  width: 18rem;
+  height: auto;
+  background: #ffffff;
+  /* Drop Shadow */
+  box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+  border-radius: 8px;
+  margin: 0rem 0 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.case_study_content_each_grid img {
+  width: 18rem;
+  height: auto;
+  border-radius: 8px 8px 0px 0px;
+}
+.case_study_content_each_text {
+  margin: 0.5rem;
+}
+.mission {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/missin.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  background-attachment: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-.how_we_do_this_container {
-  width: 90%;
-  margin:4rem auto 2rem auto;
-  
-  display: flex;
-}
-.how_we_do_this_image {
-  width: 40%;
-  height: auto;
-  object-fit: cover;
-}
-.how_we_do_this_content {
-  width: 55%;
-  margin: 1rem;
+.mission_text {
+  width: 984px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 135%;
+  /* or 49px */
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
 }
 @media all and (max-width: 700px) {
-  .vision_heading {
-    font-size: 1.4rem;
-    width: 100%;
+  .mainContainer {
+    background-image: none;
+    margin-top: 1.8rem;
   }
-  .vision_sub_heading {
-    width: 100%;
+  .top_contianer {
+    margin-top: 50px;
+    background-color: #eff4f8;
+    flex-direction: column-reverse;
+  }
+  .top_contianer_image {
+    background-color: #eff4f8;
+    flex: 4;
+    height: auto;
+    background-image: url(/girl_mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: scroll;
+  }
+  .fund_raise_in {
+    font-size: 1.4rem;
+  }
+  .need_for_funds {
     font-size: 1rem;
   }
-  .top_images_div {
-    width: 100%;
-    height: 200px;
+  .cryptoCurrency {
+    font-size: 1.5rem;
   }
-  .top_image {
-    width: 100%;
-    height: 200px;
-  }
-  .donate {
-    display: flex;
-    flex-direction: column;
-  }
-  .postContainer {
-    width: 100%;
-    display: flex;
-  }
-  .postContainer_image{
-    width: 95%;
-    height: 200px;
+  .top_contianer_content_title {
+    width: 80%;
     margin: auto;
-    object-fit: cover;
+    margin-top: 2rem;
   }
-  .how_we_do_this_container {
+  .case_study_content_subtitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.7rem;
+    line-height: 135%;
+    margin-top: 1rem;
+    /* or 32px */
+
+    text-align: center;
+    letter-spacing: -0.015em;
+  }
+  .case_study_content_grid {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
-  .how_we_do_this_image {
-    width: 100%;
+  .case_study_content_each_grid {
+    width: 246px;
+    margin: 1rem auto 1rem auto;
   }
-  .how_we_do_this_content {
-    width: 90%;
+  .case_study_content_each_grid img {
+    width: 246px;
+  }
+  .mission_text {
+    font-size: 1.5rem;
   }
 }

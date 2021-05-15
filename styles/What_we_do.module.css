@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #F9FBFD;
+  background-color: #f9fbfd;
 }
 .what_we_do_container_content {
   width: 80%;
@@ -48,7 +48,7 @@
 .what_we_do_grid_each {
   width: 450px;
   margin: 2rem;
-   background: #FFFFFF;;
+  background: #ffffff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -70,7 +70,6 @@
   margin-left: 0.4rem;
 }
 .what_we_do_text {
-
   height: 6rem;
   text-align: start;
   font-family: DM Sans;
@@ -83,12 +82,25 @@
 
   opacity: 0.7;
 }
-@media all and (max-width:700px){
-  .what_we_do_grid_each{
+@media all and (max-width: 700px) {
+  .what_we_do_grid_each {
     margin: 0.5rem;
     height: auto;
   }
-  .what_we_do_text{
+  .what_we_do_text {
     margin-bottom: 1rem;
+  }
+  .what_we_do_sub_title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    /* #272727 */
+
+    color: #182a43;
   }
 }

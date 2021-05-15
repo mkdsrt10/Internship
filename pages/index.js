@@ -1,72 +1,65 @@
 import styles from "../styles/Home.module.css";
+import Coins from "../components/Coins";
+import What_we_do_container from "../components/What_we_do";
+import Impact_conatiner from "../components/Impact";
+import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/router";
-import Slide from 'react-reveal/Slide';
-export default function Home() {
-  const [donateList, setDonateList] = useState(["v", "v", "v"]);
-  const router = useRouter();
+const Home = () => {
+  const [news, setNews] = useState(["v", "v", "v"]);
   return (
-    <div className className={styles.mainContainer}>
-
-      <Slide left>
-      <div className={styles.hero}>
-        <div className={styles.vision_heading}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt,
-          similique.
-          <div className={styles.vision_sub_heading}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
-            modi illum totam sit distinctio fugit enim voluptates maiores libero
-            minima!
+    <div className={styles.Root}>
+      <div className={styles.mainContainer}>
+        <div className={styles.top_contianer}>
+          <div className={styles.top_contianer_content}>
+            <div className={styles.top_contianer_content_title}>
+              <div className={styles.fund_raise_in}>Raise Funds in</div>
+              <div className={styles.cryptoCurrency}>CryptoCurrency</div>
+              <div className={styles.need_for_funds}>
+                Need Funds to Pay For a Medical Emergency or Social Cause?
+              </div>
+              <div className={styles.start_now}>
+                <div className={styles.text}>
+                  Start a fund raise - It’s FREE
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.top_contianer_image}></div>
+        </div>
+      </div>
+      <Coins />
+      <What_we_do_container />
+      <Impact_conatiner />
+      <div className={styles.case_study_container}>
+        <div className={styles.case_study_content_container}>
+          <div className={styles.case_study_content_title}>CASE STUDY</div>
+          <div className={styles.case_study_content_subtitle}>
+            Crypto bringing the <span>CHANGE</span>
           </div>
         </div>
-        <div className={styles.top_images_div}>
-          <img src={"../1.jpg"} alt="logo" className={styles.top_image}></img>
+
+        <div className={styles.case_study_content_grid}>
+          {news.map((e) => {
+            return (
+              <div className={styles.case_study_content_each_grid}>
+                <img src={"/1.jpg"} />
+                <div className={styles.case_study_content_each_text}>
+                  Crypto genius gives a billion dollars worth of joke coin for
+                  India covid relief
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-      </Slide>
-      <div className={styles.contribute_title}>Contribute here</div>
-      
-      <div className={styles.donate}>
-        {donateList.map((post, index) => {
-          return (
-            <Slide bottom key={index}>
-            <div
-              className={styles.postContainer}
-              key={index}
-              onClick={() => {
-                router.push("/blogs");
-              }}
-            >
-              <img src={"../1.jpg"} alt="image" className={styles.postContainer_image}/>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero
-                quam temporibus aspernatur veritatis eveniet dignissimos,
-                voluptatibus laudantium consectetur unde repellendus!
-              </p>
-            </div>
-            </Slide>
-          );
-        })}
-      </div>
-      <Slide left>
-      <div className={styles.how_we_do_this_title}>How we do this</div>
-      <div className={styles.how_we_do_this_container}>
-          <img
-            src={"../1.jpg"}
-            alt="image"
-            className={styles.how_we_do_this_image}
-            />
-      
-        <div className={styles.how_we_do_this_content}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor illo
-          non quia soluta dolores. Culpa ex, odit cum praesentium voluptatibus
-          labore minima? Soluta excepturi repudiandae nobis velit, quasi
-          praesentium exercitationem id quia consequuntur maiores sit quis
-          doloribus nam. Nihil, odit omnis. Odio voluptatibus a illum impedit
-          possimus quaerat voluptatem nam.
+      <div className={styles.mission}>
+        <div className={styles.mission_text}>
+          Our mission is to help NGOs & Social workers fundraise from global
+          audience without any friction.
         </div>
       </div>
-      </Slide>
     </div>
   );
-}
+};
+
+export default Home;
