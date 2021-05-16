@@ -75,6 +75,11 @@
   border-radius: 4px;
   margin-top: 2rem;
 }
+.start_now:hover{
+  background-color:  #298686;
+  cursor: pointer;
+
+}
 .text {
   font-family: DM Sans;
   font-style: normal;

@@ -4,7 +4,11 @@ import What_we_do_container from "../components/What_we_do";
 import Impact_conatiner from "../components/Impact";
 import Link from "next/link";
 import { useState } from "react";
+import router from "next/router";
 const Home = () => {
+  const clickhandler=(e)=>{
+    router.push("/fundraise");
+  }
   const [news, setNews] = useState(["v", "v", "v"]);
   return (
     <div className={styles.Root}>
@@ -17,8 +21,8 @@ const Home = () => {
               <div className={styles.need_for_funds}>
                 Need Funds to Pay For a Medical Emergency or Social Cause?
               </div>
-              <div className={styles.start_now}>
-                <div className={styles.text}>
+              <div className={styles.start_now} onClick={clickhandler}>
+                <div className={styles.text} >
                   Start a fund raise - It’s FREE
                 </div>
               </div>
