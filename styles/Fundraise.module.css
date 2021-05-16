@@ -1,0 +1,48 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+}
+.main_container span{
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+.Ngo_container {
+  width: 80%;
+  height: 400px;
+  margin:10rem auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.Individual_container {
+  width: 80%;
+  height: 400px;
+  margin:2rem auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Individual_container button,.Ngo_container button{
+    width: 15rem;
+    height: 3rem;
+    outline: none;
+    Border :none;
+    box-shadow: 0.2px 0.2px;
+    background-color:  #48b7b7;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.Individual_container button:hover,.Ngo_container button:hover{
+    background-color:  #298686;
+}
+@media all and (max-width : 700px){
+    .Ngo_container {
+        margin :7rem auto 2rem auto ;
+    }
+    .Ngo_container {
+        padding-bottom: 4rem;
+    }
+}
