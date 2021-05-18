@@ -28,6 +28,7 @@ const SocialSignIn = ({ ui, setUi }) => {
         },
       });
       console.log(user);
+      setUi('SignIn');
     } catch (error) {
       console.log("error signing up:", error);
     }
@@ -125,15 +126,19 @@ const SocialSignIn = ({ ui, setUi }) => {
 
       <div className={styles.social_signIn}>
         <button
-          onClick={() => {
-            Auth.federatedSignIn({ provider: "Google" });
+          onClick={async() => {
+             const { user } = await Auth.federatedSignIn({
+               provider: "Google",
+             });
+             console.log(user);
           }}
         >
           SignIn with Google
         </button>
         <button
-          onClick={() => {
-            Auth.federatedSignIn({ provider: "Facebook" });
+          onClick={async() => {
+            const {user}=await Auth.federatedSignIn({ provider: "Facebook" });
+            console.log(user);
           }}
         >
           SignIn with Facebook
