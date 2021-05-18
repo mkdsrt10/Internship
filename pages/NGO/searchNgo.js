@@ -2,6 +2,9 @@ import { TagFaces } from "@material-ui/icons";
 import { useEffect } from "react";
 import { useState } from "react";
 import styles from "../../styles/SearchNgo.module.css";
+import Pagination from "next-pagination";
+import "next-pagination/dist/index.css";
+
 const SearchNgo = () => {
   const [tag, setTag] = useState([""]);
   const [ngoList, setNgoList] = useState([
@@ -56,7 +59,7 @@ const SearchNgo = () => {
   return (
     <div className={styles.main_conatiner}>
       <div className={styles.search_bar}>
-        <input type="text" onChange={(e) => {}} />
+        <input placeholder="Search" type="text" onChange={(e) => {}} />
       </div>
       <div className={styles.search_container}>
         <div className={styles.filter}>
@@ -106,8 +109,23 @@ const SearchNgo = () => {
           })}
         </div>
       </div>
+      <div className={styles.pagination}>
+        <Pagination total={1000} />
+      </div>
     </div>
   );
 };
+export const getServerSideProps= async(context)=>{
+  var {page}=context.query;
+  if(page===undefined){
+    page=1;
+  }
+  console.log(page);
+  return {
+    props:{
+      
+    }
+  }
 
+}
 export default SearchNgo;
