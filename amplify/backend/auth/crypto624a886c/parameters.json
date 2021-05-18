@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "client9eecb0d5_identitypool_9eecb0d5",
+    "identityPoolName": "crypto624a886c_identitypool_624a886c",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "client9eecb0d5",
-    "userPoolName": "client9eecb0d5_userpool_9eecb0d5",
+    "resourceNameTruncated": "crypto624a886c",
+    "userPoolName": "crypto624a886c_userpool_624a886c",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "client9eecb0d5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "crypto624a886c_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "9eecb0d5",
-    "resourceName": "client9eecb0d5",
+    "sharedId": "624a886c",
+    "resourceName": "crypto624a886c",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,10 +45,18 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
     "usernameAttributes": [
         "email"
     ],
+    "hostedUIDomainName": "crypto624a886c-624a886c",
+    "authProvidersUserPool": [
+        "Facebook",
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

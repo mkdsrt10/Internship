@@ -6,7 +6,7 @@ const Fundraise = () => {
         router.push("/ngo");
     }
     const IndividualClickHandler=(e)=>{
-        router.push("/ngo");
+        router.push("/fundraise/Individualform");
 
     }
   return (

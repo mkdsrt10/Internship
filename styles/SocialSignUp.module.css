@@ -1,0 +1,64 @@
+.main_container {
+  width: 60%;
+  margin: 5rem auto 2rem auto;
+  box-shadow: wheat;
+  display: flex;
+  padding-top: 3rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+}
+
+.input_field input,
+.input_field textarea {
+  width: 20rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+
+  margin: 1rem;
+  margin-left: 0;
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+}
+.main_container button {
+  width: 20rem;
+  margin-top: 1rem;
+  height: 3.2rem;
+  background: #48b7b7;
+  border-radius: 4px;
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  color: #ffffff;
+  opacity: 1;
+  outline: none !important;
+  border: none;
+}
+.social_signIn {
+  display: flex;
+  flex-direction: column;
+}
+.social_signIn button {
+  margin-top: 1rem;
+  width: 20rem;
+  height: 3rem;
+  font-size: 1rem;
+  color: black;
+  background-color: white;
+  border: 1px solid #ccc;
+    margin-left: -1rem;
+  outline: none !important;
+  border-radius: 20px;
+}
+.login {
+  margin-top: 1rem;
+}
+.login span {
+  color: #48b7b7;
+}

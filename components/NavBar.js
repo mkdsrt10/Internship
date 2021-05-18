@@ -1,7 +1,9 @@
 import styles from "../styles/NavBar.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import {useRouter} from "next/router"
 const NavBar = () => {
+  const router=useRouter();
   const [nav, setnav] = useState(false);
   const handler = () => {
     setnav(!nav);
@@ -9,7 +11,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.nav}>
-        <div className={styles.logo}>Support coin</div>
+        <div onClick={(e)=>{router.push("/")}} className={styles.logo}>Support coin</div>
         <div
           className={nav == true ? styles.nav_items_active : styles.nav_items}
         >
