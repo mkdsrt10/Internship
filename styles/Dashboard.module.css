@@ -1,0 +1,25 @@
+.main_container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+.DashBoard{
+    display: flex;
+    flex-direction: row;
+}
+.DashBoard_menu{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: end;
+    border-right: 1px solid #ccc;
+}
+.DashBoard_menu_items{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+}
+.DashBoard_content{
+    flex: 3;
+}
