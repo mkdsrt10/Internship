@@ -14,28 +14,26 @@
   margin-top: -10px;
 }
 .top_contianer_image {
-    background-color: #eff4f8;
-    flex: 4;
-    height: auto;
-    background-image: url(/backgroundgirl.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-attachment: scroll;
-  }
+    display: none;
+}
 .top_contianer {
   width: 100%;
   height: 90vh;
   display: flex;
   margin-top: 92px;
   flex-direction: row;
+  background-image: url(/backgroundgirl.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-attachment: scroll;
 }
 .top_contianer_content {
   flex: 1;
 }
 .top_contianer_content_title {
-  margin-left: 96px;
-  margin-top: 150px;
+  margin-left: 5vw;
+  margin-top: 27vh;
 }
 .fund_raise_in {
   font-family: Montserrat;
@@ -237,7 +235,7 @@
   flex-wrap: wrap;
 }
 .case_study_content_each_grid {
-  width: 18rem;
+  width: 23rem;
   height: auto;
   background: #ffffff;
   /* Drop Shadow */
@@ -248,7 +246,7 @@
   flex-direction: column;
 }
 .case_study_content_each_grid img {
-  width: 18rem;
+  width: 100%;
   height: auto;
   border-radius: 8px 8px 0px 0px;
 }
@@ -269,7 +267,7 @@
   text-align: center;
 }
 .join_hand{
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: flex-start;
   text-align: center;
@@ -339,32 +337,40 @@
   }
   .top_contianer {
     margin-top: 50px;
+    Margin-bottom: 2rem;
     background-color: #eff4f8;
     flex-direction: column-reverse;
+    background-image: none;
   }
   .top_contianer_image {
     background-color: #eff4f8;
+    display: flex;
     flex: 4;
     height: auto;
-    background-image: url(/girl_mobile.png);
+    background-image: url(/backgroundgirl.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     background-attachment: scroll;
   }
   .fund_raise_in {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.015em;
   }
   .need_for_funds {
     font-size: 1rem;
+    margin-top: 1rem;
   }
   .cryptoCurrency {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.005em;
   }
   .top_contianer_content_title {
     width: 80%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   .case_study_content_subtitle {
     font-family: Montserrat;
@@ -384,13 +390,50 @@
     justify-content: center;
   }
   .case_study_content_each_grid {
-    width: 246px;
+    width: 70%;
     margin: 1rem auto 1rem auto;
   }
   .case_study_content_each_grid img {
-    width: 246px;
+    width: 100%;
+    Height: auto;
+  }
+  .case_study_content_each_text {
+    margin: 1rem;
   }
   .mission_text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
+  .mission{
+    height: 60vh;
+    Padding: 3rem;
+  }
+.start_now {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 262px;
+  height: 42px;
+  align-items: center;
+  padding: 15px 30px;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-top: 1.7rem;
+}
+.text{
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+}
+.join_hand{
+  height: 60vh;
+}
+.join_hand_text{
+  padding: 2rem 3rem;
+  font-size: 36px;
+  line-height: 135%;
+  margin: 3rem 0rem 0rem;
+
+  letter-spacing: -0.015em;
+
+  color: #182a43;
+}
 }

@@ -102,7 +102,7 @@
     height: auto;
   }
   .what_we_do_text {
-    margin-bottom: 1rem;
+    margin: 0rem 2rem 2rem;
   }
   .what_we_do_sub_title {
     font-family: Montserrat;
@@ -117,4 +117,10 @@
 
     color: #182a43;
   }
+  .what_we_do_text {
+   height: auto;
+ }
+ .what_we_do_grid_each_top {
+   margin: 2rem 2rem;
+ }
 }
