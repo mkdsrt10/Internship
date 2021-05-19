@@ -23,8 +23,8 @@ const Navbar = () => {
       <Slide top>
         <div className={styles.Navbar}>
           <img
-            src="../favicon.ico"
-            alt="Blogs"
+            src="/CryptoFunds.png"
+            alt="Logo"
             className={styles.logo}
             onClick={() => {
               if (nav) {
