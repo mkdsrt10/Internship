@@ -6,16 +6,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: url(/background_girl.jpeg);
+  background-color: #EFF4F8;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: scroll;
   margin-top: -10px;
 }
+.top_contianer_image {
+    background-color: #eff4f8;
+    flex: 4;
+    height: auto;
+    background-image: url(/backgroundgirl.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: scroll;
+  }
 .top_contianer {
   width: 100%;
-  height: Calc(100vh);
+  height: 90vh;
   display: flex;
   margin-top: 92px;
   flex-direction: row;
@@ -30,8 +40,8 @@
 .fund_raise_in {
   font-family: Montserrat;
   font-style: normal;
-  font-weight: 800;
-  font-size: 48px;
+  font-weight: 600;
+  font-size: 3.2rem;
   line-height: 59px;
   /* identical to box height */
 
@@ -41,7 +51,7 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
-  font-size: 72px;
+  font-size: 4.2rem;
   line-height: 88px;
   /* identical to box height */
 
@@ -257,6 +267,54 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.join_hand{
+  height: 90vh;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  margin: 2rem 0rem 0rem;
+  padding: 2rem 0rem 5rem;
+  background-color: #F9FBFD;
+  background-size: 62rem 20rem;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: scroll;
+
+}
+.join_hand_text{
+  padding: 2rem 10rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 135%;
+  margin: 3rem 0rem 0rem;
+  /* or 49px */
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.join_hand_center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0rem 0rem 3rem;
+}
+.join_hand_lower{
+  flex:1;
+  margin: 0vw 15vw;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-attachment: scroll;
 }
 .mission_text {
   width: 984px;

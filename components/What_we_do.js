@@ -3,7 +3,7 @@ const what_we_do_container = () => {
   return (
     <div className={styles.what_we_do_container}>
       <div className={styles.what_we_do_container_content}>
-        <div className={styles.what_we_do_title}>What we do</div>
+        <div className={styles.what_we_do_title}>WHAT WE DO</div>
         <div className={styles.what_we_do_sub_title}>
           Fundraising for the people and causes you care.
         </div>
@@ -29,7 +29,7 @@ const what_we_do_container = () => {
                 className={styles.what_we_do_image}
                 style={{ borderBottom: "4px solid #EF7C6E" }}
               >
-                <img src="../Ellipse11.png" />
+                <img src="../allcrypto.png" />
               </div>
               <div className={styles.what_we_do_topic}>All Crypto Accepted</div>
             </div>
@@ -59,7 +59,7 @@ const what_we_do_container = () => {
                 className={styles.what_we_do_image}
                 style={{ borderBottom: "4px solid #F4D072" }}
               >
-                <img src="../Ellipse11.png" />
+                <img src="../awarness.png" />
               </div>
               <div className={styles.what_we_do_topic}>Spreading Awareness</div>
             </div>

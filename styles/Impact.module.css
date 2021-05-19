@@ -1,5 +1,5 @@
 .Impact_container {
-  margin-top: 2rem;
+  margin: 4rem 2rem;
   height: auto;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
 }
 .Impact_cotent_conainer {
   width: 90%;
-  margin: 3rem auto 3rem auto;
+  margin: 4rem auto 4rem auto;
   display: flex;
   flex-direction: row;
 }
@@ -40,21 +40,17 @@
 }
 .Impact_content_right {
   flex: 1;
+  min-height: 600px;
   background-image: url(/home_impact_image.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-attachment: scroll;
 }
 .Impact_cotent_grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-image: url(/missin.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: scroll;
 
   margin-top: 5rem;
 }
