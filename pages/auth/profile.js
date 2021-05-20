@@ -4,18 +4,19 @@ import { Auth } from "aws-amplify";
 import "../../src/config_Amplify";
 import SocialSignIn from "../../components/SocialSignUp";
 import SignInForm from "../../components/SignIn";
+import {useRouter} from "next/router";
 function Profile() {
+  const router=useRouter();
   const [user, setUser] = useState(null);
   const [ui, setUi] = useState();
   useEffect(() => {
     checkUser();
     async function checkUser() {
       try {
-        const { user } = await Auth.currentAuthenticatedUser();
+        const user  = await Auth.currentAuthenticatedUser();
         console.log(user);
-
         setUser(user);
-       setUi("Profile");
+        router.push("/Dashboard");
       } catch (error) {
         setUser(null);
         setUi("SignUp");

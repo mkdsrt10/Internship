@@ -1,0 +1,21 @@
+.input_field input,
+.input_field textarea {
+  width: 17rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+.input_field input:focus {
+  border: 2px solid #48b7b7;
+}
+.account_information,.account_password{
+
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
