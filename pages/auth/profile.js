@@ -4,23 +4,17 @@ import { Auth } from "aws-amplify";
 import "../../src/config_Amplify";
 import SocialSignIn from "../../components/SocialSignUp";
 import SignInForm from "../../components/SignIn";
-import {useRouter} from "next/router";
-function Profile() {
-  const router=useRouter();
+import { useRouter } from "next/router";
+
+import { withSSRContext } from "aws-amplify";
+import "../../src/config_Amplify";
+function Profile({authenticated}) {
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [ui, setUi] = useState();
   useEffect(() => {
-    checkUser();
-    async function checkUser() {
-      try {
-        const user  = await Auth.currentAuthenticatedUser();
-        console.log(user);
-        setUser(user);
-        router.push("/Dashboard");
-      } catch (error) {
-        setUser(null);
-        setUi("SignUp");
-      }
+    if(authenticated==false){
+      setUi("SignUp");
     }
   }, []);
   return (
@@ -60,5 +54,24 @@ function Profile() {
     </div>
   );
 }
-
+export const getServerSideProps = async (context) => {
+  const { Auth } = withSSRContext(context);
+  try {
+    const user = await Auth.currentAuthenticatedUser();
+    console.log(user);
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/Dashboard",
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        authenticated:false,
+      },
+    };
+  }
+};
 export default Profile;
