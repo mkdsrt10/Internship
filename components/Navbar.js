@@ -1,92 +1,53 @@
-import styles from "../styles/Navbar.module.css";
-import { useRouter } from "next/router";
+import styles from "../styles/NavBar.module.css";
 import Link from "next/link";
 import { useState } from "react";
-
-import Slide from "react-reveal/Slide";
-import ReorderOutlinedIcon from "@material-ui/icons/ReorderOutlined";
-import { route } from "next/dist/next-server/server/router";
-const Navbar = () => {
-  const router = useRouter();
+import {useRouter} from "next/router"
+const NavBar = () => {
+  const router=useRouter();
   const [nav, setnav] = useState(false);
-  const toggle_Handler = (e) => {
-    console.log(e.target);
+  const handler = () => {
     setnav(!nav);
-  };
-  const Handler = (e) => {
-    if (nav) {
-      setnav(!nav);
-    }
   };
   return (
     <div className={styles.container}>
-      <Slide top>
-        <div className={styles.Navbar}>
-          <img
-            src="/CryptoFunds.png"
-            alt="Logo"
-            className={styles.logo}
-            onClick={() => {
-              if (nav) {
-                setnav(!nav);
-              }
-              router.push("/");
-            }}
-          />
-          <nav
-            className={
-              nav == true ? styles.list_items_active : styles.list_items
-            }
-          >
-            <li onClick={Handler}>
-              <Link href={"/home"}>
-                <a className={styles.a}>Ways to Donate</a>
-              </Link>
-            </li>
-
-            <li onClick={Handler}>
-              <Link href={"/home"}>
-                <a className={styles.a}>Get Involoved</a>
-              </Link>
-            </li>
-
-            <li onClick={Handler}>
-              <Link href={"/About"}>
-                <a className={styles.a}>About Us</a>
-              </Link>
-            </li>
-            <li onClick={Handler}>
-              <Link href={"/blogs"}>
-                <a className={styles.a}>Blogs</a>
-              </Link>
-            </li>
-
-            <li onClick={Handler}>
-              <Link href={"/home"}>
-                <a className={styles.a}>Reach</a>
-              </Link>
-            </li>
-          </nav>
-
-          <div className={styles.toggle_button}>
-            <button onClick={toggle_Handler}>
-              <ReorderOutlinedIcon />
-            </button>
-          </div>
-          <div>
-            <button
-              className={styles.Login}
-              onClick={() => {
-                router.push("/auth/profile");
-              }}
-            >
-              LogIn
-            </button>
-          </div>
+      <div className={styles.nav}>
+        <div onClick={(e)=>{router.push("/")}} className={styles.logo}><img
+            src="/CryptoFunds.png"></img></div>
+        <div
+          className={nav == true ? styles.Hamburger_change : styles.Hamburger}
+          onClick={handler}
+        >
+          <div className={styles.bar1}></div>
+          <div className={styles.bar2}></div>
+          <div className={styles.bar3}></div>
         </div>
-      </Slide>
+        <div
+          className={nav == true ? styles.nav_items_active : styles.nav_items}
+        >
+          <li>
+            <Link href="/vipin">
+              <a className={styles.donate}>Donate</a>
+            </Link>
+          </li>
+          <li>
+            <Link href={"/"}>
+              <a className={styles.how_it_works}>How it works?</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a className={styles.faq}>FAQs</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <a className={styles.contactus}>Contact us</a>
+            </Link>
+          </li>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;
