@@ -9,7 +9,10 @@ const Home = () => {
   const clickhandler=(e)=>{
     router.push("/fundraise");
   }
-  const [news, setNews] = useState(["v", "v", "v"]);
+  const [news, setNews] = useState([{title:"Crypto genius gives a billion dollars worth of joke coin for India covid relief", image:"/news1.png", link:"https://www.livemint.com/news/india/crypto-genius-gives-a-billion-dollars-worth-of-joke-coin-for-india-covid-relief-11620892706902.html#:~:text=country%20or%20individual-,Vitalik%20Buterin%2C%20the%2027%2Dyear%2Dold%20founder%20of%20Ethereum,from%20any%20country%20or%20individual."},
+{title:"Ethereum founder donates $1 billion to help Covid-hit India", image:"/news2.png", link:"https://www.livemint.com/news/india/crypto-genius-gives-a-billion-dollars-worth-of-joke-coin-for-india-covid-relief-11620892706902.html#:~:text=country%20or%20individual-,Vitalik%20Buterin%2C%20the%2027%2Dyear%2Dold%20founder%20of%20Ethereum,from%20any%20country%20or%20individual."},
+{title:"Ethereum Co-Founder Donates Rs. 4.5 Crores For COVID-19 Relief in India", image:"/news3.png", link:"https://www.livemint.com/news/india/crypto-genius-gives-a-billion-dollars-worth-of-joke-coin-for-india-covid-relief-11620892706902.html#:~:text=country%20or%20individual-,Vitalik%20Buterin%2C%20the%2027%2Dyear%2Dold%20founder%20of%20Ethereum,from%20any%20country%20or%20individual."}
+]);
   return (
     <div className={styles.Root}>
       <div className={styles.mainContainer}>
@@ -43,15 +46,14 @@ const Home = () => {
         </div>
 
         <div className={styles.case_study_content_grid}>
-          {news.map((e) => {
+          {news.map((ne) => {
             return (
-              <div className={styles.case_study_content_each_grid}>
-                <img src={"/1.jpg"} />
+              <a target="_blank" href={ne.link}><div className={styles.case_study_content_each_grid}>
+                <img src={ne.image} />
                 <div className={styles.case_study_content_each_text}>
-                  Crypto genius gives a billion dollars worth of joke coin for
-                  India covid relief
+                  {ne.title}
                 </div>
-              </div>
+              </div></a>
             );
           })}
         </div>

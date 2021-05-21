@@ -109,8 +109,7 @@
   .Impact_content_right_mobile {
     display: block;
     height: 500px;
-    margin-top: 2rem;
-    Width: 100%;
+    Margin: 0rem -1rem 0rem -2rem;
     background-image: url(/home_impact_image.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -132,7 +131,7 @@
     color: #182a43;
   }
   .Impact_cotent_grid {
-    margin: 1rem 2rem 2rem 0rem;
+    margin: 1rem -2rem 0rem;
     Flex: 1;
     Justify-content: center;
     background-image: url(/missin.png);
