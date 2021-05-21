@@ -86,7 +86,7 @@
 .footer_bottom {
   width: 90%;
   margin: 1rem auto 2rem auto;
-  padding-top:2rem ;
+  padding-top: 2rem;
   display: flex;
   flex-direction: row;
   border-top: 1px solid #394366;
@@ -107,6 +107,15 @@
   color: #bec9f2;
 
   opacity: 0.7;
+}
+.copyright span2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+
+  line-height: 34px;
+  color: #ef7c6e;
 }
 .footer_nav {
   flex: 1;

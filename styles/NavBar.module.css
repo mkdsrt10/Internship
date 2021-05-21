@@ -17,10 +17,14 @@
 }
 .logo {
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-right: 5rem;
   flex: 1;
   margin-left: 96px;
+  font-weight: 500;
+}
+.logo span {
+  color: #ef7c6e;
 }
 .nav_items,
 .nav_items_active {
