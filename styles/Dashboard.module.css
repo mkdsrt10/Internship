@@ -1,25 +1,32 @@
-.main_container{
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
+.main_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
 }
-.DashBoard{
-    display: flex;
-    flex-direction: row;
+.DashBoard {
+  display: flex;
+  flex-direction: row;
 }
-.DashBoard_menu{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    text-align: end;
-    border-right: 1px solid #ccc;
+.DashBoard_menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: end;
+  border-right: 1px solid #ccc;
 }
-.DashBoard_menu_items{
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-right: 1rem;
-
+.DashBoard_menu_items {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
 }
-.DashBoard_content{
-    flex: 3;
+.DashBoard_menu_items_active {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: #48b7b7;
+}
+.DashBoard_content {
+  flex: 3;
 }

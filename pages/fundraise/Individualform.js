@@ -17,7 +17,7 @@ const IndividualForm = () => {
     cryptos: [],
   });
   const FormHandler = (e) => {
-    setForm({...form,cryptos:form.cryptos.map(t=>{return(t.value)})})
+    
     console.log(form)
   };
   return (
@@ -36,8 +36,10 @@ const IndividualForm = () => {
                   type="text"
                   id="firstname"
                   name="firstname"
+                  value={form.firstname}
                   onChange={(e) => {
-                    setForm({ ...form, firstname: e.target.value });
+                    const name = e.target.value.split(" ");
+                    setForm({ ...form, firstname: name[0], lastname: name[1] });
                   }}
                 />
               </label>
@@ -51,6 +53,7 @@ const IndividualForm = () => {
                   type="text"
                   id="lastname"
                   name="lastname"
+                  value={form.lastname}
                   onChange={(e) => {
                     setForm({ ...form, lastname: e.target.value });
                   }}
@@ -64,6 +67,7 @@ const IndividualForm = () => {
                 <input
                   required
                   type="email"
+                  value={form.email}
                   id="email"
                   name="email"
                   onChange={(e) => {
@@ -79,6 +83,7 @@ const IndividualForm = () => {
                 <input
                   type="tel"
                   id="phone"
+                  value={form.phone}
                   name="phone"
                   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                   onChange={(e) => {
@@ -95,21 +100,28 @@ const IndividualForm = () => {
               <label for="title">
                 Title
                 <br />
+                <input
+                  required
+                  value={form.title}
+                  type="text"
+                  onChange={(e) => {
+                    setForm({ ...form, title: e.target.value });
+                  }}
+                />
               </label>
-
-              <input
-                required
-                type="text"
-                onChange={(e) => {
-                  setForm({ ...form, title: e.target.value });
-                }}
-              />
             </div>
             <div className={styles.input_field}>
               <label for="about">
                 About
                 <br />
-                <input />
+                <input
+                  required
+                  value={form.about}
+                  type="text"
+                  onChange={(e) => {
+                    setForm({ ...form, about: e.target.value });
+                  }}
+                />
               </label>
             </div>
             <div className={styles.input_field}>
@@ -118,6 +130,7 @@ const IndividualForm = () => {
                 <br />
                 <textarea
                   type="text"
+                  value={form.how_fund_raise_will_help}
                   onChange={(e) => {
                     setForm({
                       ...form,
@@ -137,6 +150,7 @@ const IndividualForm = () => {
                 <input
                   required
                   type="url"
+                  value={form.linkedIn_profile}
                   onChange={(e) => {
                     setForm({ ...form, linkedIn_profile: e.target.value });
                   }}
@@ -149,6 +163,7 @@ const IndividualForm = () => {
                 <br />
                 <input
                   required
+                  value={form.social_media_link}
                   type="url"
                   onChange={(e) => {
                     setForm({ ...form, social_media_link: e.target.value });
@@ -165,6 +180,7 @@ const IndividualForm = () => {
                 <br />
                 <input
                   required
+                  value={form.how_much_to_raise}
                   type="number"
                   onChange={(e) => {
                     setForm({ ...form, how_much_to_raise: e.target.value });
@@ -178,6 +194,7 @@ const IndividualForm = () => {
                 className={styles.select}
                 isMulti
                 options={options}
+                value={form.cryptos}
                 closeMenuOnSelect={false}
                 onChange={(e) => setForm({ ...form, cryptos: e })}
               />

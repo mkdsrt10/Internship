@@ -11,7 +11,14 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.nav}>
-        <div onClick={(e)=>{router.push("/")}} className={styles.logo}>Support coin</div>
+        <div
+          onClick={(e) => {
+            router.push("/");
+          }}
+          className={styles.logo}
+        >
+          Crypto<span>Funds</span>
+        </div>
         <div
           className={nav == true ? styles.nav_items_active : styles.nav_items}
         >

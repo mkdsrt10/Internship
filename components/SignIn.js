@@ -1,13 +1,17 @@
 import {Auth } from "aws-amplify"
 import { useState } from "react";
+import {useRouter} from "next/router";
 import styles from "../styles/SignIn.module.css"
 const SignIn = ({ui ,setUi}) => {
+  const router=useRouter();
   const [form ,setForm] =useState({email: "" ,password:""})
   const SignInHandler= async(e)=>{
     e.preventDefault();
      try {
-       const user = await Auth.signIn(form.email, form.password);
-       setUi("Profile")
+       const {user} = await Auth.signIn(form.email, form.password);
+       console.log(user);
+       router.push("/Dashboard");
+
      } catch (error) {
        console.log("error signing in", error);
        setUi("SignUp");
