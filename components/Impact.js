@@ -10,6 +10,7 @@ const Impact = () => {
           <div className={styles.Impact_content_left_subtitle}>
             Helping Today. Helping Tomorrow.
           </div>
+          <div className={styles.Impact_content_right_mobile}></div>
           <div className={styles.Impact_cotent_grid}>
             <div className={styles.Impact_cotent_each_grid}>
               <div

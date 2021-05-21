@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div className={styles.footer_bottom}>
         <div className={styles.copyright}>
-          Crypto<span2>Funds</span2> <span>@ Copyright 2021</span>
+          <img src="CryptoFunds-white.png"></img> <span>@ Copyright 2021</span>
         </div>
         <div className={styles.footer_nav}>
           <ul>

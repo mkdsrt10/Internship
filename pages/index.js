@@ -62,6 +62,18 @@ const Home = () => {
           audience without any friction.
         </div>
       </div>
+      <div className={styles.join_hand}>
+        <div className={styles.join_hand_text}>
+          Spread awareness and raise funds to solve local cause.
+        </div>
+        <div className={styles.join_hand_center}>
+         <div className={styles.start_now} onClick={clickhandler}>
+           <div className={styles.text} >
+               Start a fund raise - It’s FREE
+           </div>
+         </div>
+        </div>
+      </div>
     </div>
   );
 };

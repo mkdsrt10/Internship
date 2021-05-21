@@ -8,7 +8,7 @@
 }
 .what_we_do_container_content {
   width: 80%;
-  margin: 3rem auto 0 auto;
+  margin: 4rem auto 4rem auto;
 }
 .what_we_do_title {
   font-family: Montserrat;
@@ -27,7 +27,6 @@
 }
 .what_we_do_sub_title {
   height: auto;
-  margin-top: 1rem;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -35,6 +34,9 @@
   line-height: 59px;
   text-align: center;
   letter-spacing: -0.015em;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 2rem;
   /* #272727 */
 
   color: #182a43;
@@ -58,7 +60,7 @@
 .what_we_do_grid_each_top {
   display: flex;
   align-items: center;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 2rem 3rem;
   border-bottom: 1px solid #bccedd;
 }
 .what_we_do_image {
@@ -68,6 +70,18 @@
   flex: 3;
   text-align: start;
   margin-left: 0.4rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 1rem;
+  line-height: 180%;
+  /* or 43px */
+
+
+  /* #272727 */
+
+  color: #182A43;
 }
 .what_we_do_text {
   height: 6rem;
@@ -76,7 +90,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 3rem 2rem;
   line-height: 180%;
   color: #182a43;
 
@@ -88,7 +102,7 @@
     height: auto;
   }
   .what_we_do_text {
-    margin-bottom: 1rem;
+    margin: 0rem 2rem 2rem;
   }
   .what_we_do_sub_title {
     font-family: Montserrat;
@@ -103,4 +117,10 @@
 
     color: #182a43;
   }
+  .what_we_do_text {
+   height: auto;
+ }
+ .what_we_do_grid_each_top {
+   margin: 2rem 2rem;
+ }
 }
