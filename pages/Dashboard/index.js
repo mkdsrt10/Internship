@@ -48,6 +48,7 @@ const DashBoard = ({ user }) => {
     </div>
   );
 };
+
 export const getServerSideProps = async (context) => {
   const {Auth } =withSSRContext(context);
   try {

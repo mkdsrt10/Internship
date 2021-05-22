@@ -51,6 +51,7 @@
   font-weight: 800;
   font-size: 4.2rem;
   line-height: 88px;
+  text-shadow: 2px 0 0 #EFF4F8, -2px 0 0 #EFF4F8, 0 2px 0 #EFF4F8, 0 -2px 0 #EFF4F8, 1px 1px #EFF4F8, -1px -1px 0 #EFF4F8, 1px -1px 0 #EFF4F8, -1px 1px 0 #EFF4F8;
   /* identical to box height */
 
   letter-spacing: -0.015em;
