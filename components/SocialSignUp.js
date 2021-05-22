@@ -2,6 +2,7 @@ import { Auth } from "aws-amplify";
 import { useState } from "react";
 import "../src/config_Amplify";
 import styles from "../styles/SocialSignUp.module.css";
+
 const SocialSignIn = ({ ui, setUi }) => {
   const [form, setForm] = useState({
     email: "",
@@ -36,6 +37,7 @@ const SocialSignIn = ({ ui, setUi }) => {
 
   return (
     <div className={styles.main_container}>
+      <span>Sign up as an NGO</span>
       <form>
         <div className={styles.input_field}>
           <label for="firstname">
@@ -89,22 +91,6 @@ const SocialSignIn = ({ ui, setUi }) => {
           </label>
         </div>
         <div className={styles.input_field}>
-          <label for="password">
-            Password
-            <br />
-            <input
-              required
-              type="password"
-              id="password"
-              name="password"
-              value={form.password}
-              onChange={(e) => {
-                setForm({ ...form, password: e.target.value });
-              }}
-            />
-          </label>
-        </div>
-        <div className={styles.input_field}>
           <label for="phone">
             Phone
             <br />
@@ -118,6 +104,22 @@ const SocialSignIn = ({ ui, setUi }) => {
               onChange={(e)=>{
                 setForm({...form,phone:e.target.value})
               }}
+            />
+          </label>
+        </div>
+        <div className={styles.input_field}>
+          <label htmlFor="password">
+            Password
+            <br/>
+            <input
+                required
+                type="password"
+                id="password"
+                name="password"
+                value={form.password}
+                onChange={(e) => {
+                  setForm({...form, password: e.target.value});
+                }}
             />
           </label>
         </div>

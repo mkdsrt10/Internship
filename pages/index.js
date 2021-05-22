@@ -26,7 +26,7 @@ const Home = () => {
               </div>
               <div className={styles.start_now} onClick={clickhandler}>
                 <div className={styles.text} >
-                  Start a fund raise - It’s FREE
+                  Start a fund raise - It’s Needed
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@ const Home = () => {
       <Impact_conatiner />
       <div className={styles.case_study_container}>
         <div className={styles.case_study_content_container}>
-          <div className={styles.case_study_content_title}>CASE STUDY</div>
+          <div className={styles.case_study_content_title}>REAL STORIES</div>
           <div className={styles.case_study_content_subtitle}>
             Crypto bringing the <span>CHANGE</span>
           </div>
@@ -71,7 +71,7 @@ const Home = () => {
         <div className={styles.join_hand_center}>
          <div className={styles.start_now} onClick={clickhandler}>
            <div className={styles.text} >
-               Start a fund raise - It’s FREE
+               Start a fund raise - It’s Needed
            </div>
          </div>
         </div>

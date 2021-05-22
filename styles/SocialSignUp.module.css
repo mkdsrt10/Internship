@@ -1,15 +1,18 @@
 .main_container {
-  width: 60%;
-  margin: 5rem auto 2rem auto;
-  box-shadow: wheat;
+  width: 100%;
+  margin: 0rem auto 2rem auto;
   display: flex;
-  padding-top: 3rem;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 1rem;
+}
+
+.main_container span{
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 1rem 1rem 2rem 1rem;
+  text-align: center;
 }
 
 .input_field input,

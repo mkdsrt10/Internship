@@ -19,7 +19,7 @@ const SignIn = ({ui ,setUi}) => {
   }
   return (
     <div className={styles.main_container}>
-      Login to Account
+      <span>Login to your Account</span>
       <form>
         <div className={styles.input_field}>
           <label for="email">

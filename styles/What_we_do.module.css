@@ -84,7 +84,7 @@
   color: #182A43;
 }
 .what_we_do_text {
-  height: 6rem;
+  height: max-content;
   text-align: start;
   font-family: DM Sans;
   font-style: normal;

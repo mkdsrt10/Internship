@@ -11,18 +11,18 @@ const IndividualForm = () => {
     title: "",
     about: "",
     how_fund_raise_will_help: "",
-    linkedIn_profile: "",
-    social_media_link: "",
     how_much_to_raise: "",
     cryptos: [],
   });
+  const [team, setTeam] = useState([
+      {name:"", linkedin:""},
+      ])
   const FormHandler = (e) => {
-    
+// API_LEFT
     console.log(form)
   };
   return (
     <div className={styles.main_container}>
-      <div className={styles.left}></div>
       <div className={styles.right}>
         <form>
           <div className={styles.about_you_container}>
@@ -38,8 +38,8 @@ const IndividualForm = () => {
                   name="firstname"
                   value={form.firstname}
                   onChange={(e) => {
-                    const name = e.target.value.split(" ");
-                    setForm({ ...form, firstname: name[0], lastname: name[1] });
+                    const name = e.target.value;
+                    setForm({ ...form, firstname: name });
                   }}
                 />
               </label>
@@ -143,33 +143,52 @@ const IndividualForm = () => {
           </div>
           <div className={styles.About_team}>
             <span>About team</span>
-            <div className={styles.input_field}>
-              <label for="LinkedIn">
-                LinkedIn Profile
-                <br />
-                <input
-                  required
-                  type="url"
-                  value={form.linkedIn_profile}
-                  onChange={(e) => {
-                    setForm({ ...form, linkedIn_profile: e.target.value });
-                  }}
-                />
-              </label>
-            </div>
-            <div className={styles.input_field}>
-              <label for="Social Media Link">
-                Social Media Link
-                <br />
-                <input
-                  required
-                  value={form.social_media_link}
-                  type="url"
-                  onChange={(e) => {
-                    setForm({ ...form, social_media_link: e.target.value });
-                  }}
-                />
-              </label>
+            <div className={styles.About_team_row}>
+              {
+                team.map((player, i) => {
+                  return (
+                      <div>
+                        <div className={styles.About_team_remove_team}>
+                          <div className={styles.input_field}>Mate #{i+1}</div>
+                          <div onClick={() => {setTeam([...team.slice(0,i), ...team.slice()])}} className={styles.input_field}>❌</div>
+                        </div>
+                        <div className={styles.input_field}>
+                          <label htmlFor="Name">
+                            Name
+                            <br/>
+                            <input
+                                required
+                                type="text"
+                                value={player.name}
+                                onChange={(e) => {
+                                  setTeam([...team.slice(0,i), {...player, name: e.target.value}, ...team.slice(i+1)]);
+                                }}
+                            />
+                          </label>
+                        </div>
+                        <div className={styles.input_field}>
+                          <label htmlFor="LinkedIn">
+                            LinkedIn Profile
+                            <br/>
+                            <input
+                                required
+                                type="url"
+                                value={player.linkedin}
+                                onChange={(e) => {
+                                  setTeam([...team.slice(0,i), {...player, linkedin: e.target.value}, ...team.slice(i+1)]);
+                                }}
+                            />
+                          </label>
+                        </div>
+                      </div>
+                  )
+                })
+              }
+              <div className={styles.About_team_button_container}>
+                <button onClick={() => {setTeam([...team, {name:"", linkedin:""}])}}>
+                  Add teammates
+                </button>
+              </div>
             </div>
           </div>
           <div className={styles.payment}>
@@ -194,6 +213,8 @@ const IndividualForm = () => {
                 className={styles.select}
                 isMulti
                 options={options}
+                isSearchable
+                placeholder={"Select multiple crypto"}
                 value={form.cryptos}
                 closeMenuOnSelect={false}
                 onChange={(e) => setForm({ ...form, cryptos: e })}
@@ -203,7 +224,7 @@ const IndividualForm = () => {
         </form>
         <div className={styles.button_container}>
           <button type="submit" onClick={FormHandler}>
-            Register
+            Create the fundraise
           </button>
         </div>
       </div>

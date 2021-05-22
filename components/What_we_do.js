@@ -34,8 +34,7 @@ const what_we_do_container = () => {
               <div className={styles.what_we_do_topic}>All Crypto Accepted</div>
             </div>
             <div className={styles.what_we_do_text}>
-              We are providing the advancement of accepting almost all crypto
-              around the world.
+              Don't want volatile coin, use stable coins to raise fund. Choose your coins and raise money in them.
             </div>
           </div>
           <div className={styles.what_we_do_grid_each}>
@@ -50,7 +49,7 @@ const what_we_do_container = () => {
             </div>
             <div className={styles.what_we_do_text}>
               We help social workers and NGOs on raising fund around the world
-              through blockchain.
+              through blockchain: tokens, NFTs and smart contracts.
             </div>
           </div>
           <div className={styles.what_we_do_grid_each}>
@@ -64,8 +63,7 @@ const what_we_do_container = () => {
               <div className={styles.what_we_do_topic}>Spreading Awareness</div>
             </div>
             <div className={styles.what_we_do_text}>
-              We are aimed at raising voices for social causes and help in
-              fighting poverty, and all other social foes.
+              Keep in touch with your donors and supporters with regular updates about work and new causes you are solving.
             </div>
           </div>
         </div>

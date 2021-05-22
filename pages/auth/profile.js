@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
+
 function Profile({authenticated}) {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -18,7 +19,7 @@ function Profile({authenticated}) {
     }
   }, []);
   return (
-    <div>
+    <div className={styles.main_container}>
       {ui == "SignUp" && <SocialSignIn ui={ui} setUi={setUi} />}
       {ui == "SignIn" && <SignInForm ui={ui} setUi={setUi} />}
       {ui == "Profile" && (
