@@ -1,8 +1,9 @@
 import styles from "../styles/footer.module.css";
 import {useRouter} from "next/router";
+import {PRIVATE_VIEW} from "../src/constant";
 const Footer = () => {
   const router=useRouter();
-  if (router.pathname === "/dashboard") {
+  if (PRIVATE_VIEW.includes(router.pathname)) {
     return <div></div>
   }
   return (
