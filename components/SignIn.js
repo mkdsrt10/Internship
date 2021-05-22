@@ -10,7 +10,7 @@ const SignIn = ({ui ,setUi}) => {
      try {
        const {user} = await Auth.signIn(form.email, form.password);
        console.log(user);
-       router.push("/Dashboard");
+       router.push("/dashboard");
 
      } catch (error) {
        console.log("error signing in", error);

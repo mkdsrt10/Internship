@@ -41,6 +41,9 @@
 
   color: #182a43;
 }
+.nav_items_mobile{
+  display: none;
+}
 .nav_items_active {
   display: none;
 }

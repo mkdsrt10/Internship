@@ -1,7 +1,10 @@
 import styles from "../styles/footer.module.css";
-import Slide from "react-reveal/Slide";
-import Link from "next/link";
+import {useRouter} from "next/router";
 const Footer = () => {
+  const router=useRouter();
+  if (router.pathname === "/dashboard") {
+    return <div></div>
+  }
   return (
     <div className={styles.footer}>
       <div className={styles.footer_top}>
