@@ -1,7 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
 import ImageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
-import NavBar from "../../components/Navbar";
 import { useRouter } from "next/router";
 import Slide from "react-reveal/Slide";
 import styles from "../../styles/Allblogs.module.css";
