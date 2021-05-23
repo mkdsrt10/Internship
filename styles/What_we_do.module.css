@@ -1,0 +1,126 @@
+.what_we_do_container {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f9fbfd;
+}
+.what_we_do_container_content {
+  width: 80%;
+  margin: 4rem auto 4rem auto;
+}
+.what_we_do_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2em;
+
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.4;
+}
+.what_we_do_sub_title {
+  height: auto;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 2rem;
+  /* #272727 */
+
+  color: #182a43;
+}
+.what_we_do_grid_conatiner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  justify-content: center;
+}
+.what_we_do_grid_each {
+  width: 450px;
+  margin: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+}
+.what_we_do_grid_each_top {
+  display: flex;
+  align-items: center;
+  margin: 2rem 3rem;
+  border-bottom: 1px solid #bccedd;
+}
+.what_we_do_image {
+  flex: 1;
+}
+.what_we_do_topic {
+  flex: 3;
+  text-align: start;
+  margin-left: 0.4rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 1rem;
+  line-height: 180%;
+  /* or 43px */
+
+
+  /* #272727 */
+
+  color: #182A43;
+}
+.what_we_do_text {
+  height: max-content;
+  text-align: start;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0rem 3rem 2rem;
+  line-height: 180%;
+  color: #182a43;
+
+  opacity: 0.7;
+}
+@media all and (max-width: 700px) {
+  .what_we_do_grid_each {
+    margin: 0.5rem;
+    height: auto;
+  }
+  .what_we_do_text {
+    margin: 0rem 2rem 2rem;
+  }
+  .what_we_do_sub_title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    /* #272727 */
+
+    color: #182a43;
+  }
+  .what_we_do_text {
+   height: auto;
+ }
+ .what_we_do_grid_each_top {
+   margin: 2rem 2rem;
+ }
+}

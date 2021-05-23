@@ -1,0 +1,440 @@
+.Root {
+  display: flex;
+  flex-direction: column;
+}
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #EFF4F8;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  margin-top: -10px;
+}
+.top_contianer_image {
+    display: none;
+}
+.top_contianer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  margin-top: 92px;
+  flex-direction: row;
+  background-image: url(/backgroundgirl.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-attachment: scroll;
+}
+.top_contianer_content {
+  flex: 1;
+}
+.top_contianer_content_title {
+  margin-left: 5vw;
+  margin-top: 27vh;
+}
+.fund_raise_in {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3.2rem;
+  line-height: 59px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+}
+.cryptoCurrency {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4.2rem;
+  line-height: 88px;
+  text-shadow: 2px 0 0 #EFF4F8, -2px 0 0 #EFF4F8, 0 2px 0 #EFF4F8, 0 -2px 0 #EFF4F8, 1px 1px #EFF4F8, -1px -1px 0 #EFF4F8, 1px -1px 0 #EFF4F8, -1px 1px 0 #EFF4F8;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #ef7c6e;
+}
+
+.need_for_funds {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 170%;
+  /* or 34px */
+
+  /* #272727 */
+
+  color: #182a43;
+}
+
+.start_now {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 312px;
+  height: 56px;
+  align-items: center;
+  padding: 15px 30px;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+.start_now:hover{
+  background-color:  #298686;
+  cursor: pointer;
+
+}
+.text {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+  color: #ffffff;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+.top_container_image {
+  flex: 1;
+}
+.Impact_container {
+  margin-top: 2rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Impact_cotent_conainer {
+  width: 90%;
+  margin: 3rem auto 3rem auto;
+  display: flex;
+  flex-direction: row;
+}
+.Impact_content_left {
+  flex: 1;
+}
+.Impact_content_left_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.4;
+}
+.Impact_content_left_subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: -0.015em;
+  color: #182a43;
+  margin-top: 0.2rem;
+}
+.Impact_content_right {
+  flex: 1;
+  background-image: url(/home_impact_image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+.Impact_cotent_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 5rem;
+}
+.Impact_cotent_each_grid {
+  width: 13rem;
+  height: 6rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+.Impact_cotent_each_grid_top {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 62px;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.Impact_cotent_each_grid_bottom {
+  height: 3rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 135%;
+  /* or 24px */
+  margin-top: 0.2rem;
+  /* #272727 */
+
+  color: #182a43;
+
+  opacity: 0.8;
+}
+.case_study_container {
+  background: #f9fbfd;
+}
+.case_study_content_container {
+  margin-top: 5rem;
+}
+.case_study_content_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: capitalize;
+  color: #b3b3b3;
+}
+.case_study_content_subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #182a43;
+}
+.case_study_content_subtitle span {
+  color: #ef7c6e;
+}
+.case_study_content_grid {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+
+  flex-wrap: wrap;
+}
+.case_study_content_each_grid {
+  width: 23rem;
+  height: auto;
+  background: #ffffff;
+  /* Drop Shadow */
+  box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+  border-radius: 8px;
+  margin: 0rem 0 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.case_study_content_each_grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0px 0px;
+}
+.case_study_content_each_text {
+  margin: 1.5rem;
+}
+.mission {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/missin.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  background-attachment: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.join_hand{
+  height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  margin: 2rem 0rem 0rem;
+  padding: 2rem 0rem 5rem;
+  background-color: #F9FBFD;
+  background-size: 62rem 20rem;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: scroll;
+
+}
+.join_hand_text{
+  padding: 2rem 10rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 135%;
+  margin: 3rem 0rem 0rem;
+  /* or 49px */
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.join_hand_center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0rem 0rem 3rem;
+}
+.join_hand_lower{
+  flex:1;
+  margin: 0vw 15vw;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-attachment: scroll;
+}
+.mission_text {
+  width: 984px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 135%;
+  /* or 49px */
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+@media all and (max-width: 700px) {
+  .mainContainer {
+    background-image: none;
+    margin-top: 1.8rem;
+  }
+  .top_contianer {
+    margin-top: 50px;
+    Margin-bottom: 2rem;
+    background-color: #eff4f8;
+    flex-direction: column-reverse;
+    background-image: none;
+  }
+  .top_contianer_image {
+    background-color: #eff4f8;
+    display: flex;
+    flex: 4;
+    height: auto;
+    background-image: url(/backgroundgirl.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: scroll;
+  }
+  .fund_raise_in {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.015em;
+  }
+  .need_for_funds {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .cryptoCurrency {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.005em;
+  }
+  .top_contianer_content_title {
+    width: 80%;
+    margin: auto;
+    margin-top: 0rem;
+  }
+  .case_study_content_subtitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.7rem;
+    line-height: 135%;
+    margin-top: 1rem;
+    /* or 32px */
+
+    text-align: center;
+    letter-spacing: -0.015em;
+  }
+  .case_study_content_grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .case_study_content_each_grid {
+    width: 70%;
+    margin: 1rem auto 1rem auto;
+  }
+  .case_study_content_each_grid img {
+    width: 100%;
+    Height: auto;
+  }
+  .case_study_content_each_text {
+    margin: 1rem;
+  }
+  .mission_text {
+    font-size: 1.8rem;
+  }
+  .mission{
+    height: 60vh;
+    Padding: 3rem;
+  }
+.start_now {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 262px;
+  height: 42px;
+  align-items: center;
+  padding: 15px 30px;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-top: 1.7rem;
+}
+.text{
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+}
+.join_hand{
+  height: 60vh;
+}
+.join_hand_text{
+  padding: 0rem 3rem;
+  font-size: 28px;
+  line-height: 135%;
+  margin: 0rem 0rem 0rem;
+
+  letter-spacing: -0.015em;
+
+  color: #182a43;
+}
+}

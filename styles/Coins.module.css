@@ -1,0 +1,17 @@
+.coinContainer {
+  display: flex;
+  height: 96px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+  align-items: center;
+  background: #f5ebea;
+}
+@media all and (max-width: 700px) {
+  .coinContainer {
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}

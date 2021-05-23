@@ -1,0 +1,47 @@
+.TeamMember_container {
+    padding: 2.5rem 2rem 2rem 2rem ;
+  width: 90%;
+  margin: 3rem auto 3rem auto;
+  display: flex;
+  border-top: 1px solid #ccc;
+  }
+.TeamMember_profile {
+    width: 40%;
+    margin: 0rem auto 1rem auto ;
+    text-align: center;
+}
+.TeamMember_Name{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.TeamMember_image {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+}
+.TeamMember_description {
+  width: 70%;
+  margin-left: 2rem;
+}
+@media all and (max-width: 700px){
+    .TeamMember_container{
+        width: 92%;
+        flex-direction: column;
+        margin: auto;
+        padding: 1rem 0  2rem 0 ;
+    }
+    .TeamMember_profile{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .TeamMember_image {
+        width: 100%;
+    }
+    .TeamMember_description{
+        width: 100%;
+        margin :1rem 0 0 0;
+    }
+}

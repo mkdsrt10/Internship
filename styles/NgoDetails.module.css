@@ -1,0 +1,68 @@
+.main_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.left {
+  flex: 1;
+  background-image: url(/girl_mobile.png);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.right {
+  flex: 2.5;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.ngo_details ,.social_details,.team_members_form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.social_details span,.team_members span{
+  width: 100%;
+  font-size: 1.7rem;
+  margin: 1rem 1rem 2rem 0;
+
+}
+.team_members_form span{
+  font-size: 1.2rem;
+  margin: 1rem 1rem 1rem 0;
+
+}
+.input_field input,
+.input_field textarea {
+  width: 17rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem 1rem 1rem 0rem;
+}
+.input_field input:focus {
+  border: 2px solid #48b7b7;
+}
+.button_container button {
+  display: inline-block;
+  width: 20rem;
+  height: 3.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+  outline: none !important;
+  border: none !important;
+  padding: 15px 30px;
+  background: #48b7b7;
+  color: white;
+  border-radius: 4px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.button_container button:hover {
+  background-color: #239696;
+  cursor: pointer;
+}

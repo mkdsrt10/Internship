@@ -1,0 +1,139 @@
+.image_top {
+  width: 100%;
+  height: 500px;
+}
+.main_container {
+  display: flex;
+}
+.first_blog {
+  margin-top: 10rem;
+  display: block;
+  background-color: pink;
+  width: 100%;
+  height: 200px;
+}
+.container {
+  width: 70%;
+  height: auto;
+  display: flex;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.blogContainer {
+  display: inline;
+  width: 47%;
+  height: auto;
+  font-weight: 300;
+  margin: 0.5rem;
+  box-sizing: border-box;
+}
+.blog_title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.blog_image {
+  opacity: 0.98;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.blog_body {
+  font-weight: 300;
+  margin: 1rem 0 1rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.right {
+  margin: auto;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  font-weight: 100;
+}
+.search {
+  margin-top: 1rem;
+  padding: 0.6rem;
+  border: 2px solid pink;
+  border-color: pink;
+  font-size: 1rem;
+  width: 70%;
+}
+.search:focus {
+  outline: none !important;
+  border: 2px solid red;
+}
+.recent_posts_title {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
+}
+.recent_all_posts {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+.recent_particular_posts {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  font-weight: 400;
+  color: purple;
+}
+.search_button {
+  width: 2.7rem;
+  height: 2.7rem;
+  margin-top: 0.7rem;
+  background-color: rgb(92, 84, 86);
+  color: white;
+  outline: none !important;
+  box-shadow: none;
+}
+
+@media all and (max-width: 1050px) {
+  .container {
+    display: block;
+  }
+  .blogContainer {
+    display: inline-block;
+    width: 95%;
+  }
+  .first_title {
+    position: relative;
+    bottom: 10rem;
+    margin-left: 7rem;
+    font-size: 2rem;
+  }
+}
+@media all and (max-width: 600px) {
+  .image_top {
+    width: 100%;
+    height: 300px;
+  }
+  .main_container {
+    display: block;
+  }
+  .container {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+  .right {
+    margin: auto;
+    margin-left: 1rem;
+    width: 90%;
+    box-sizing: border-box;
+  }
+  .blogContainer {
+    width: 95%;
+    margin: 0 0 0 0.5rem;
+  }
+  .top_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,23 @@
+.Form{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+
+}
+
+.main_container{
+    display: flex;
+    justify-content: center;
+    padding: 10rem 15vw 5rem;
+    background-color: #EFF4F8;
+    align-items: center;
+}
+
+
+@media all and (max-width: 500px) {
+    .main_container{
+        padding: 10rem 5vw 5rem;
+    }
+}
