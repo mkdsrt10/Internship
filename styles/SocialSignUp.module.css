@@ -62,3 +62,16 @@
 .login span {
   color: #48b7b7;
 }
+@media all and (max-width: 600px){
+  .main_container{
+    margin: auto;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .input_field input,
+.input_field textarea {
+  width: 15rem;
+}
+}

@@ -17,8 +17,8 @@
 }
 .about_you_container,
 .about_cause_container,
-.About_team ,
-.button_container{
+.About_team,
+.button_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -36,7 +36,7 @@
 }
 .input_field input,
 .input_field textarea {
-  width: 17rem;
+  max-width: 17rem;
   height: 2.5rem;
   font-size: 1rem;
   outline: none;
@@ -53,27 +53,27 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-.dropdown  {
+.dropdown {
   width: 100%;
   height: auto;
   height: 2.5rem;
   font-size: 1rem;
   margin-top: 0.5rem;
 }
-.dropdown span{
+.dropdown span {
   width: 80%;
   font-size: 1rem;
 }
-.select{
+.select {
   height: auto;
   width: 80%;
-  margin: 1rem 1rem 1rem 1rem ;
+  margin: 1rem 1rem 1rem 1rem;
 }
-.button_container{
+.button_container {
   margin: 5rem 2rem 1rem 1rem;
   color: white;
 }
-.button_container button{
+.button_container button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -88,38 +88,47 @@
   color: white;
   border-radius: 4px;
 }
-.button_container button:hover{
-  background-color:  #239696;
+.button_container button:hover {
+  background-color: #239696;
   cursor: pointer;
-
 }
 @media all and (max-width: 500px) {
-.main_container{
-  width: 100%;
-  flex-direction: column;
-}
-.right{
-  width: 95%;
-  margin: auto;
-}
+  .main_container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .right {
+    width: 95%;
+    margin: auto;
+  }
   .input_field input,
-.input_field textarea {
-  width: 17rem;
-  height: 2.5rem;
-  font-size: 1rem;
-  outline: none;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  margin-top: 0.5rem;
-  padding: 0.3rem;
+  .input_field textarea {
+    width: 17rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    padding: 0.3rem;
+  }
+  .dropdown span {
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdown div {
+  }
 }
-.dropdown span{
-  display: flex;
-  flex-direction: column;
-}
-.Submit_button{
-  width: 10rem;
-  font-size: 0.6rem;
-  margin-top :3rem;
-}
+@media all and (max-width: 600px) {
+  .main_container {
+    flex-direction: column;
+  }
+  .input_field input,
+  .input_field textarea {
+    width: 15rem;
+  }
+  .button_container button {
+    margin-top: 5rem;
+    width: 15rem;
+  }
 }

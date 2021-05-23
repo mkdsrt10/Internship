@@ -1,7 +1,7 @@
 import styles from "../../styles/Individualform.module.css";
 import Select from "react-select";
 import { useState } from "react";
-import options from "../../utility/crypto_options"
+import options from "../../utility/crypto_options";
 const IndividualForm = () => {
   const [form, setForm] = useState({
     firstname: " ",
@@ -17,8 +17,7 @@ const IndividualForm = () => {
     cryptos: [],
   });
   const FormHandler = (e) => {
-    
-    console.log(form)
+    console.log(form);
   };
   return (
     <div className={styles.main_container}>
@@ -190,22 +189,24 @@ const IndividualForm = () => {
             </div>
             <div className={styles.dropdown}>
               <span>Accept payment in which cryptos:</span>
-              <Select
-                className={styles.select}
-                isMulti
-                options={options}
-                value={form.cryptos}
-                closeMenuOnSelect={false}
-                onChange={(e) => setForm({ ...form, cryptos: e })}
-              />
+              <div>
+                <Select
+                  className={styles.select}
+                  isMulti
+                  options={options}
+                  value={form.cryptos}
+                  closeMenuOnSelect={false}
+                  onChange={(e) => setForm({ ...form, cryptos: e })}
+                />
+              </div>
+            </div>
+            <div className={styles.button_container}>
+              <button type="submit" onClick={FormHandler}>
+                Register
+              </button>
             </div>
           </div>
         </form>
-        <div className={styles.button_container}>
-          <button type="submit" onClick={FormHandler}>
-            Register
-          </button>
-        </div>
       </div>
     </div>
   );

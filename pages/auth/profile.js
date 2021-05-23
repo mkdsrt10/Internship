@@ -18,11 +18,11 @@ function Profile({authenticated}) {
     }
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       {ui == "SignUp" && <SocialSignIn ui={ui} setUi={setUi} />}
       {ui == "SignIn" && <SignInForm ui={ui} setUi={setUi} />}
       {ui == "Profile" && (
-        <div>
+        <div >
           {" "}
           <h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi illum

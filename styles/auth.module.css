@@ -1,8 +1,10 @@
-.Form{
+.container {
+  width: 100%;
+}
+@media all and (max-width: 600px) {
+  .container {
     width: 80%;
-    text-align: center;
-    margin: auto;
-    margin-top: 10rem;
-    margin-bottom: 4rem;
-
+    margin: 0;
+    padding: 0;
+  }
 }

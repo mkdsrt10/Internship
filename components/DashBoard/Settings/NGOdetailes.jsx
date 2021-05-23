@@ -1,4 +1,4 @@
-import styles from "../../styles/NgoDetails.module.css";
+import styles from "../../../styles/Settings.ngo.module.css";
 import Chips, { Chip } from "react-chips";
 import { useState } from "react";
 const NgoDetails = () => {
@@ -11,10 +11,8 @@ const NgoDetails = () => {
     areaOperation: "",
     description: "",
   });
-  
   return (
     <div className={styles.main_container}>
-      <div className={styles.left}></div>
       <div className={styles.right}>
         <div className={styles.ngo_details}>
           <div className={styles.input_field}>
@@ -131,11 +129,11 @@ const NgoDetails = () => {
         </div>
         <div className={styles.team_members}>
           <span>Team Members</span>
-          {teamform.map((team,index) => {
+          {teamform.map((team, index) => {
             return (
               <div className={styles.team_members_form}>
                 {" "}
-                <span>Team Member {index+1}</span>
+                <span>Team Member {index + 1}</span>
                 <div className={styles.input_field}>
                   <label for="Name">
                     Name
@@ -211,11 +209,10 @@ const NgoDetails = () => {
           </div>
         </div>
         <div className={styles.button_container}>
-          <button type="submit">Register</button>
+          <button type="submit">Update</button>
         </div>
       </div>
     </div>
   );
 };
-
 export default NgoDetails;
