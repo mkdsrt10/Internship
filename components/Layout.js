@@ -1,4 +1,4 @@
-import NavBar from "./NavBar"
+import NavBar from "./Navbar"
 import Footer from "./Footer"
 import Head from 'next/head'
 
@@ -14,5 +14,5 @@ const Layout = ({children}) => {
       </div>
     );
 }
- 
+
 export default Layout;
