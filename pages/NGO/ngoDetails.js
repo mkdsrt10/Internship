@@ -11,7 +11,6 @@ const NgoDetails = () => {
     areaOperation: "",
     description: "",
   });
-  
   return (
     <div className={styles.main_container}>
       <div className={styles.left}></div>

@@ -6,32 +6,40 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: url(/background_girl.jpeg);
+  background-color: #EFF4F8;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: scroll;
   margin-top: -10px;
 }
+.top_contianer_image {
+    display: none;
+}
 .top_contianer {
   width: 100%;
-  height: Calc(100vh);
+  height: 90vh;
   display: flex;
   margin-top: 92px;
   flex-direction: row;
+  background-image: url(/backgroundgirl.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-attachment: scroll;
 }
 .top_contianer_content {
   flex: 1;
 }
 .top_contianer_content_title {
-  margin-left: 96px;
-  margin-top: 150px;
+  margin-left: 5vw;
+  margin-top: 27vh;
 }
 .fund_raise_in {
   font-family: Montserrat;
   font-style: normal;
-  font-weight: 800;
-  font-size: 48px;
+  font-weight: 600;
+  font-size: 3.2rem;
   line-height: 59px;
   /* identical to box height */
 
@@ -41,8 +49,9 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
-  font-size: 72px;
+  font-size: 4.2rem;
   line-height: 88px;
+  text-shadow: 2px 0 0 #EFF4F8, -2px 0 0 #EFF4F8, 0 2px 0 #EFF4F8, 0 -2px 0 #EFF4F8, 1px 1px #EFF4F8, -1px -1px 0 #EFF4F8, 1px -1px 0 #EFF4F8, -1px 1px 0 #EFF4F8;
   /* identical to box height */
 
   letter-spacing: -0.015em;
@@ -227,7 +236,7 @@
   flex-wrap: wrap;
 }
 .case_study_content_each_grid {
-  width: 18rem;
+  width: 23rem;
   height: auto;
   background: #ffffff;
   /* Drop Shadow */
@@ -238,12 +247,12 @@
   flex-direction: column;
 }
 .case_study_content_each_grid img {
-  width: 18rem;
+  width: 100%;
   height: auto;
   border-radius: 8px 8px 0px 0px;
 }
 .case_study_content_each_text {
-  margin: 0.5rem;
+  margin: 1.5rem;
 }
 .mission {
   width: 100%;
@@ -257,6 +266,54 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.join_hand{
+  height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  margin: 2rem 0rem 0rem;
+  padding: 2rem 0rem 5rem;
+  background-color: #F9FBFD;
+  background-size: 62rem 20rem;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: scroll;
+
+}
+.join_hand_text{
+  padding: 2rem 10rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 135%;
+  margin: 3rem 0rem 0rem;
+  /* or 49px */
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.join_hand_center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0rem 0rem 3rem;
+}
+.join_hand_lower{
+  flex:1;
+  margin: 0vw 15vw;
+  background-image: url(/join_hand.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-attachment: scroll;
 }
 .mission_text {
   width: 984px;
@@ -281,32 +338,40 @@
   }
   .top_contianer {
     margin-top: 50px;
+    Margin-bottom: 2rem;
     background-color: #eff4f8;
     flex-direction: column-reverse;
+    background-image: none;
   }
   .top_contianer_image {
     background-color: #eff4f8;
+    display: flex;
     flex: 4;
     height: auto;
-    background-image: url(/girl_mobile.png);
+    background-image: url(/backgroundgirl.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     background-attachment: scroll;
   }
   .fund_raise_in {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.015em;
   }
   .need_for_funds {
     font-size: 1rem;
+    margin-top: 1rem;
   }
   .cryptoCurrency {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.005em;
   }
   .top_contianer_content_title {
     width: 80%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   .case_study_content_subtitle {
     font-family: Montserrat;
@@ -326,13 +391,50 @@
     justify-content: center;
   }
   .case_study_content_each_grid {
-    width: 246px;
+    width: 70%;
     margin: 1rem auto 1rem auto;
   }
   .case_study_content_each_grid img {
-    width: 246px;
+    width: 100%;
+    Height: auto;
+  }
+  .case_study_content_each_text {
+    margin: 1rem;
   }
   .mission_text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
+  .mission{
+    height: 60vh;
+    Padding: 3rem;
+  }
+.start_now {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 262px;
+  height: 42px;
+  align-items: center;
+  padding: 15px 30px;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-top: 1.7rem;
+}
+.text{
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+}
+.join_hand{
+  height: 60vh;
+}
+.join_hand_text{
+  padding: 0rem 3rem;
+  font-size: 28px;
+  line-height: 135%;
+  margin: 0rem 0rem 0rem;
+
+  letter-spacing: -0.015em;
+
+  color: #182a43;
+}
 }

@@ -1,7 +1,11 @@
 import styles from "../styles/footer.module.css";
-import Slide from "react-reveal/Slide";
-import Link from "next/link";
+import {useRouter} from "next/router";
+import {PRIVATE_VIEW} from "../src/constant";
 const Footer = () => {
+  const router=useRouter();
+  if (PRIVATE_VIEW.includes(router.pathname)) {
+    return <div></div>
+  }
   return (
     <div className={styles.footer}>
       <div className={styles.footer_top}>
@@ -20,7 +24,7 @@ const Footer = () => {
       </div>
       <div className={styles.footer_bottom}>
         <div className={styles.copyright}>
-          Crypto<span2>Funds</span2> <span>@ Copyright 2021</span>
+          <img src="CryptoFunds-white.png"></img> <span>@ Copyright 2021</span>
         </div>
         <div className={styles.footer_nav}>
           <ul>

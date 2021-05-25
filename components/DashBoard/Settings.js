@@ -3,6 +3,7 @@ import styles from "../../styles/Settings.module.css";
 import Account from "../../components/DashBoard/Settings/Account";
 import Preferences from "../../components/DashBoard/Settings/Preferences";
 import NgoDetails from "./Settings/NGOdetailes";
+
 const Settings = () => {
   const [type, setType] = useState("Account");
 
@@ -46,7 +47,6 @@ const Settings = () => {
       <div className={styles.content}>
         {type == "Account" && <Account />}
         {type == "Preferences" && <Preferences />}
-
         {type == "Ngo" && <NgoDetails />}
       </div>
     </div>

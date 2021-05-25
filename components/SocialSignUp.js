@@ -2,19 +2,29 @@ import { Auth } from "aws-amplify";
 import { useState } from "react";
 import "../src/config_Amplify";
 import styles from "../styles/SocialSignUp.module.css";
+
 const SocialSignIn = ({ ui, setUi }) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
+    confirm_password:"",
     firstname: "",
     lastname: "",
     phone: "",
+    error:"",
   });
   const SignupHandler = async (e) => {
     e.preventDefault();
     try {
       const email=form.email;
       const password=form.password;
+      const confirm_password=form.confirm_password;
+      if(password!==confirm_password){
+        setForm({...form,error:"Password and confirm password should be same "})
+        alert("Password and confirm password should be same ");
+        console.log(form.error);
+        return ;
+      }
       const phone_number="+91"+form.phone;
       console.log(email);
       const username=form.email;
@@ -31,11 +41,14 @@ const SocialSignIn = ({ ui, setUi }) => {
       setUi('SignIn');
     } catch (error) {
       console.log("error signing up:", error);
+      setForm({...form,error:error.message})
+      alert(error.message);
     }
   };
 
   return (
     <div className={styles.main_container}>
+      <span>Sign up as an NGO</span>
       <form>
         <div className={styles.input_field}>
           <label for="firstname">
@@ -89,7 +102,24 @@ const SocialSignIn = ({ ui, setUi }) => {
           </label>
         </div>
         <div className={styles.input_field}>
-          <label for="password">
+          <label for="phone">
+            Phone
+            <br />
+            <input
+              required
+              type="tel"
+              id="phone"
+              name="phone"
+              value={form.phone}
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              onChange={(e) => {
+                setForm({ ...form, phone: e.target.value });
+              }}
+            />
+          </label>
+        </div>
+        <div className={styles.input_field}>
+          <label htmlFor="password">
             Password
             <br />
             <input
@@ -105,18 +135,17 @@ const SocialSignIn = ({ ui, setUi }) => {
           </label>
         </div>
         <div className={styles.input_field}>
-          <label for="phone">
-            Phone
+          <label htmlFor="confirm password">
+            Confirm Password
             <br />
             <input
               required
-              type="tel"
-              id="phone"
-              name="phone"
-              value={form.phone}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              onChange={(e)=>{
-                setForm({...form,phone:e.target.value})
+              type="password"
+              id="cpassword"
+              name="cpassword"
+              value={form.confirm_password}
+              onChange={(e) => {
+                setForm({ ...form, confirm_password: e.target.value });
               }}
             />
           </label>
@@ -126,18 +155,20 @@ const SocialSignIn = ({ ui, setUi }) => {
 
       <div className={styles.social_signIn}>
         <button
-          onClick={async() => {
-             const { user } = await Auth.federatedSignIn({
-               provider: "Google",
-             });
-             console.log(user);
+          onClick={async () => {
+            const { user } = await Auth.federatedSignIn({
+              provider: "Google",
+            });
+            console.log(user);
           }}
         >
           SignIn with Google
         </button>
         <button
-          onClick={async() => {
-            const {user}=await Auth.federatedSignIn({ provider: "Facebook" });
+          onClick={async () => {
+            const { user } = await Auth.federatedSignIn({
+              provider: "Facebook",
+            });
             console.log(user);
           }}
         >

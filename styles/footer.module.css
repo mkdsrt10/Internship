@@ -94,6 +94,8 @@
 .copyright {
   flex: 1;
   color: #ffffff;
+  display: flex;
+  align-items: center;
   font-size: 1.3rem;
 }
 .copyright span {

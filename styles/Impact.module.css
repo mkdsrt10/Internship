@@ -1,5 +1,5 @@
 .Impact_container {
-  margin-top: 2rem;
+  margin: 4rem 2rem;
   height: auto;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
 }
 .Impact_cotent_conainer {
   width: 90%;
-  margin: 3rem auto 3rem auto;
+  margin: 4rem auto 4rem auto;
   display: flex;
   flex-direction: row;
 }
@@ -40,21 +40,17 @@
 }
 .Impact_content_right {
   flex: 1;
+  min-height: 600px;
   background-image: url(/home_impact_image.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-attachment: scroll;
 }
 .Impact_cotent_grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-image: url(/missin.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: scroll;
 
   margin-top: 5rem;
 }
@@ -92,14 +88,28 @@
 
   opacity: 0.8;
 }
+.Impact_content_right_mobile {
+  display: none;
+}
 @media all and (max-width: 1000px) {
   .Impact_cotent_conainer {
     flex-direction: column-reverse;
   }
-
-  .Impact_content_right {
-    flex: none;
-    height: 400px;
+.Impact_container {
+  margin: 4rem 2rem;
+  height: auto;
+}
+.Impact_cotent_conainer {
+  width: 100%;
+  margin: 0rem auto auto;
+}
+.Impact_content_right{
+  display: none;
+}
+  .Impact_content_right_mobile {
+    display: block;
+    height: 500px;
+    Margin: 0rem -1rem 0rem -2rem;
     background-image: url(/home_impact_image.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -112,8 +122,8 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 29px;
+    font-size: 2rem;
+    line-height: 39px;
     letter-spacing: -0.015em;
 
     /* #272727 */
@@ -121,10 +131,17 @@
     color: #182a43;
   }
   .Impact_cotent_grid {
-    margin: 3rem 0rem 1rem 0rem;
+    margin: 1rem -2rem 0rem;
+    Flex: 1;
+    Justify-content: center;
+    background-image: url(/missin.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
   }
   .Impact_cotent_each_grid {
-    width: 6rem;
+    width: 35vw;
   }
   .Impact_cotent_each_grid_bottom {
     font-family: DM Sans;

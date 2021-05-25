@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
+
 function Profile({authenticated}) {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -18,11 +19,11 @@ function Profile({authenticated}) {
     }
   }, []);
   return (
-    <div className={styles.container}>
+    <div className={styles.main_container}>
       {ui == "SignUp" && <SocialSignIn ui={ui} setUi={setUi} />}
       {ui == "SignIn" && <SignInForm ui={ui} setUi={setUi} />}
       {ui == "Profile" && (
-        <div >
+        <div>
           {" "}
           <h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi illum
@@ -62,7 +63,7 @@ export const getServerSideProps = async (context) => {
     return {
       redirect: {
         permanent: false,
-        destination: "/Dashboard",
+        destination: "/dashboard",
       },
     };
   } catch (error) {
