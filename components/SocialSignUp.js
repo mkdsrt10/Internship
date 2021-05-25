@@ -2,32 +2,40 @@ import { Auth } from "aws-amplify";
 import { useState } from "react";
 import "../src/config_Amplify";
 import styles from "../styles/SocialSignUp.module.css";
+import DialogBox from "../components/DialogBox";
 
 const SocialSignIn = ({ ui, setUi }) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    confirm_password:"",
+    confirm_password: "",
     firstname: "",
     lastname: "",
     phone: "",
-    error:"",
+    error: "",
   });
+  const [dialog, setDialog] = useState({ show: false, message: "" });
   const SignupHandler = async (e) => {
     e.preventDefault();
     try {
-      const email=form.email;
-      const password=form.password;
-      const confirm_password=form.confirm_password;
-      if(password!==confirm_password){
-        setForm({...form,error:"Password and confirm password should be same "})
-        alert("Password and confirm password should be same ");
+      const email = form.email;
+      const password = form.password;
+      const confirm_password = form.confirm_password;
+      if (password !== confirm_password) {
+        setForm({
+          ...form,
+          error: "Password and confirm password should be same ",
+        });
+        setDialog({
+          show: true,
+          message: "Password and confirm password should be same",
+        });
         console.log(form.error);
-        return ;
+        return;
       }
-      const phone_number="+91"+form.phone;
+      const phone_number = "+91" + form.phone;
       console.log(email);
-      const username=form.email;
+      const username = form.email;
       const { user } = await Auth.signUp({
         username,
         password,
@@ -38,11 +46,14 @@ const SocialSignIn = ({ ui, setUi }) => {
         },
       });
       console.log(user);
-      setUi('SignIn');
+      setUi("SignIn");
     } catch (error) {
       console.log("error signing up:", error);
-      setForm({...form,error:error.message})
-      alert(error.message);
+      setForm({ ...form, error: error.message });
+      setDialog({
+        show: true,
+        message: error.message,
+      });
     }
   };
 
@@ -185,6 +196,11 @@ const SocialSignIn = ({ ui, setUi }) => {
           LogIn
         </span>
       </div>
+      <DialogBox
+        show={dialog.show}
+        message={dialog.message}
+        setDialog={setDialog}
+      />
     </div>
   );
 };

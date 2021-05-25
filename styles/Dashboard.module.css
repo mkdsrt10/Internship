@@ -11,22 +11,176 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  text-align: end;
+  align-items: flex-start;
   border-right: 1px solid #ccc;
+  padding-top: 4rem;
+  background: #f6f6f8;
+  margin-top: -1rem;
+  height: 100vh;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
 }
 .DashBoard_menu_items {
+  display: flex;
   font-size: 1.5rem;
   margin-top: 1rem;
-  margin-right: 1rem;
+  margin-left: 6rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 .DashBoard_menu_items_active {
+  display: flex;
   font-size: 1.5rem;
   margin-top: 1rem;
-  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
   cursor: pointer;
-  color: #48b7b7;
+  align-items: center;
+  justify-content: center;
+  color: #ef7c6e;
+}
+.DashBoard_menu_items img,
+.DashBoard_menu_items_active img {
+  padding-right: 1rem;
+  border-radius: 30px;
 }
 .DashBoard_content {
   flex: 3;
+}
+.menu_bottom_user {
+  display: flex;
+  margin-left: 6rem;
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.menu_bottom_user img {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+}
+.user_data {
+  display: flex;
+  flex-direction: column;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
+}
+.user_email {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  /* identical to box height, or 22px */
+
+  color: #868686;
+}
+.For_you {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 2rem;
+}
+.For_you_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: -0.015em;
+  color: #182a43;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.For_you_subtitle {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #868686;
+}
+.For_you_grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid_each {
+  width: 356px;
+  height: 343px;
+  margin: 2rem;
+  margin-right: 2rem;
+  border: 3px solid #ffffff;
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.05));
+  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+}
+.grid_each img {
+  width: 356px;
+  height: 195px;
+  object-fit: cover;
+}
+.grid_title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  /* or 24px */
+
+  /* #272727 */
+
+  margin-top: 0.5rem;
+  color: #182a43;
+}
+.grid_description {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+  /* or 22px */
+
+  color: #868686;
+  margin-top: 0.5rem;
+}
+.read_more {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  /* or 14px */
+
+  margin-top: 0.5rem;
+  color: #19bba8;
+}
+@media all and (max-width: 700px) {
+  .DashBoard_menu {
+    display: none;
+  }
+}
+@media all and (max-width: 1400px) {
+  .DashBoard_menu {
+    margin-left: 0;
+  }
+  .DashBoard_menu_items,
+  .DashBoard_menu_items_active {
+    margin-left: 2rem;
+  }
+  .menu_bottom_user {
+    margin-left: 2rem;
+  }
 }

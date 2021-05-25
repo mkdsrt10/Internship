@@ -1,6 +1,7 @@
 import { Auth } from "aws-amplify";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import DialogBox from "../components/DialogBox";
 import styles from "../styles/SignIn.module.css";
 const SignIn = ({ ui, setUi }) => {
   const router = useRouter();
@@ -10,6 +11,8 @@ const SignIn = ({ ui, setUi }) => {
     confirm_password: "",
     error: "",
   });
+
+  const [dialog, setDialog] = useState({ show: false, message: "" });
   const SignInHandler = async (e) => {
     e.preventDefault();
     if (form.password !== form.confirm_password) {
@@ -17,7 +20,10 @@ const SignIn = ({ ui, setUi }) => {
         ...form,
         error: "Password and Confrim Password should be same",
       });
-      alert("Password and Confrim Password should be same");
+      setDialog({
+        show: true,
+        message: "Password and Confrim Password should be same",
+      });
       return;
     }
     try {
@@ -26,9 +32,11 @@ const SignIn = ({ ui, setUi }) => {
       router.push("/dashboard");
     } catch (error) {
       console.log("error signing in", error);
-      setForm({...form,error:error.message});
-      alert(error.message);
-      setUi("SignUp");
+      setForm({ ...form, error: error.message });
+      setDialog({
+        show: true,
+        message: error.message,
+      });
     }
   };
   return (
@@ -114,6 +122,11 @@ const SignIn = ({ ui, setUi }) => {
           SignUp
         </span>
       </div>
+      <DialogBox
+        show={dialog.show}
+        message={dialog.message}
+        setDialog={setDialog}
+      />
     </div>
   );
 };

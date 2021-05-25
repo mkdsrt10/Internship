@@ -1,7 +1,7 @@
 import styles from "../../styles/Dashboard.module.css";
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
-import {menu_items} from "../../src/constant";
+import { menu_items } from "../../utility/constant";
 import {useRouter} from "next/router";
 const ui = "Audience";
 
@@ -21,13 +21,21 @@ const DashBoard = ({ user }) => {
                 }
                 key={index}
                 onClick={(e) => {
-                  router.push("/dashboard/"+item.url);
+                  router.push("/dashboard/" + item.url);
                 }}
               >
+                <img src={"/" + item.image + ".png"} />
                 {item.name}{" "}
               </div>
             );
           })}
+          <div className={styles.menu_bottom_user}>
+            <img src="/girl_mobile.png" />
+            <div className={styles.user_data}>
+              <div className={styles.user_name}>{"Mayank"}</div>
+              <div className={styles.user_email}>{"cf.w/ngo1"}</div>
+            </div>
+          </div>
         </div>
         <div className={styles.DashBoard_content}>
           <div>Audience</div>
