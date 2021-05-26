@@ -2,23 +2,40 @@ import { Auth } from "aws-amplify";
 import { useState } from "react";
 import "../src/config_Amplify";
 import styles from "../styles/SocialSignUp.module.css";
+import DialogBox from "../components/DialogBox";
 
 const SocialSignIn = ({ ui, setUi }) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
+    confirm_password: "",
     firstname: "",
     lastname: "",
     phone: "",
+    error: "",
   });
+  const [dialog, setDialog] = useState({ show: false, message: "" });
   const SignupHandler = async (e) => {
     e.preventDefault();
     try {
-      const email=form.email;
-      const password=form.password;
-      const phone_number="+91"+form.phone;
+      const email = form.email;
+      const password = form.password;
+      const confirm_password = form.confirm_password;
+      if (password !== confirm_password) {
+        setForm({
+          ...form,
+          error: "Password and confirm password should be same ",
+        });
+        setDialog({
+          show: true,
+          message: "Password and confirm password should be same",
+        });
+        console.log(form.error);
+        return;
+      }
+      const phone_number = "+91" + form.phone;
       console.log(email);
-      const username=form.email;
+      const username = form.email;
       const { user } = await Auth.signUp({
         username,
         password,
@@ -29,9 +46,14 @@ const SocialSignIn = ({ ui, setUi }) => {
         },
       });
       console.log(user);
-      setUi('SignIn');
+      setUi("SignIn");
     } catch (error) {
       console.log("error signing up:", error);
+      setForm({ ...form, error: error.message });
+      setDialog({
+        show: true,
+        message: error.message,
+      });
     }
   };
 
@@ -101,8 +123,8 @@ const SocialSignIn = ({ ui, setUi }) => {
               name="phone"
               value={form.phone}
               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              onChange={(e)=>{
-                setForm({...form,phone:e.target.value})
+              onChange={(e) => {
+                setForm({ ...form, phone: e.target.value });
               }}
             />
           </label>
@@ -110,16 +132,32 @@ const SocialSignIn = ({ ui, setUi }) => {
         <div className={styles.input_field}>
           <label htmlFor="password">
             Password
-            <br/>
+            <br />
             <input
-                required
-                type="password"
-                id="password"
-                name="password"
-                value={form.password}
-                onChange={(e) => {
-                  setForm({...form, password: e.target.value});
-                }}
+              required
+              type="password"
+              id="password"
+              name="password"
+              value={form.password}
+              onChange={(e) => {
+                setForm({ ...form, password: e.target.value });
+              }}
+            />
+          </label>
+        </div>
+        <div className={styles.input_field}>
+          <label htmlFor="confirm password">
+            Confirm Password
+            <br />
+            <input
+              required
+              type="password"
+              id="cpassword"
+              name="cpassword"
+              value={form.confirm_password}
+              onChange={(e) => {
+                setForm({ ...form, confirm_password: e.target.value });
+              }}
             />
           </label>
         </div>
@@ -128,18 +166,20 @@ const SocialSignIn = ({ ui, setUi }) => {
 
       <div className={styles.social_signIn}>
         <button
-          onClick={async() => {
-             const { user } = await Auth.federatedSignIn({
-               provider: "Google",
-             });
-             console.log(user);
+          onClick={async () => {
+            const { user } = await Auth.federatedSignIn({
+              provider: "Google",
+            });
+            console.log(user);
           }}
         >
           SignIn with Google
         </button>
         <button
-          onClick={async() => {
-            const {user}=await Auth.federatedSignIn({ provider: "Facebook" });
+          onClick={async () => {
+            const { user } = await Auth.federatedSignIn({
+              provider: "Facebook",
+            });
             console.log(user);
           }}
         >
@@ -156,6 +196,11 @@ const SocialSignIn = ({ ui, setUi }) => {
           LogIn
         </span>
       </div>
+      <DialogBox
+        show={dialog.show}
+        message={dialog.message}
+        setDialog={setDialog}
+      />
     </div>
   );
 };

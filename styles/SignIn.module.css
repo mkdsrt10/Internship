@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
 }
-.main_container span{
+.main_container span {
   width: 100%;
   font-size: 1.5rem;
   margin: 1rem 1rem 2rem 1rem;
@@ -47,4 +47,22 @@
 }
 .Signup span {
   color: #48b7b7;
+}
+
+.social_signIn {
+  display: flex;
+  flex-direction: column;
+}
+.social_signIn button {
+  margin-top: 1rem;
+  width: 20rem;
+  height: 3rem;
+  font-size: 1rem;
+  color: black;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin-left: -1rem;
+  outline: none !important;
+  border-radius: 20px;
+  cursor: pointer;
 }

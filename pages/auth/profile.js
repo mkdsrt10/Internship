@@ -5,7 +5,6 @@ import "../../src/config_Amplify";
 import SocialSignIn from "../../components/SocialSignUp";
 import SignInForm from "../../components/SignIn";
 import { useRouter } from "next/router";
-
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
 

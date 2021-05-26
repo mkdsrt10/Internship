@@ -2,7 +2,7 @@ import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router"
-import {menu_items, PRIVATE_VIEW} from "../src/constant";
+import {menu_items, PRIVATE_VIEW} from "../utility/constant";
 const NavBar = () => {
   const router=useRouter();
   const [nav, setnav] = useState(false);

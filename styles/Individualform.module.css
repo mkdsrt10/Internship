@@ -94,6 +94,12 @@
   margin-top: 0.5rem;
   padding: 0.3rem;
 }
+
+.categories_select{
+  width: 20rem;
+  margin-bottom:1rem ;
+  margin-top: 1rem;
+}
 .payment {
   display: flex;
   flex-direction: row;

@@ -1,7 +1,8 @@
 import styles from "../../styles/Individualform.module.css";
 import Select from "react-select";
 import { useState } from "react";
-import options from "../../utility/crypto_options"
+import options from "../../utility/crypto_options";
+import Categories_options from "../../utility/categories_options"
 const IndividualForm = () => {
   const [form, setForm] = useState({
     firstname: " ",
@@ -13,13 +14,12 @@ const IndividualForm = () => {
     how_fund_raise_will_help: "",
     how_much_to_raise: "",
     cryptos: [],
+    categories: [],
   });
-  const [team, setTeam] = useState([
-      {name:"", linkedin:""},
-      ])
+  const [team, setTeam] = useState([{ name: "", linkedin: "" }]);
   const FormHandler = (e) => {
-// API_LEFT
-    console.log(form)
+    // API_LEFT
+    console.log(form);
   };
   return (
     <div className={styles.main_container}>
@@ -140,52 +140,85 @@ const IndividualForm = () => {
                 />
               </label>
             </div>
+            <div className={styles.input_field}>
+              <label>
+                Categories
+                <br />
+                <Select
+                  className={styles.categories_select}
+                  isMulti
+                  options={Categories_options}
+                  isSearchable
+                  placeholder={"Category"}
+                  value={form.categories}
+                  closeMenuOnSelect={false}
+                  onChange={(e) => {setForm({...form,categories:e})}}
+                />
+              </label>
+            </div>
           </div>
           <div className={styles.About_team}>
             <span>About team</span>
             <div className={styles.About_team_row}>
-              {
-                team.map((player, i) => {
-                  return (
-                      <div>
-                        <div className={styles.About_team_remove_team}>
-                          <div className={styles.input_field}>Mate #{i+1}</div>
-                          <div onClick={() => {setTeam([...team.slice(0,i), ...team.slice()])}} className={styles.input_field}>❌</div>
-                        </div>
-                        <div className={styles.input_field}>
-                          <label htmlFor="Name">
-                            Name
-                            <br/>
-                            <input
-                                required
-                                type="text"
-                                value={player.name}
-                                onChange={(e) => {
-                                  setTeam([...team.slice(0,i), {...player, name: e.target.value}, ...team.slice(i+1)]);
-                                }}
-                            />
-                          </label>
-                        </div>
-                        <div className={styles.input_field}>
-                          <label htmlFor="LinkedIn">
-                            LinkedIn Profile
-                            <br/>
-                            <input
-                                required
-                                type="url"
-                                value={player.linkedin}
-                                onChange={(e) => {
-                                  setTeam([...team.slice(0,i), {...player, linkedin: e.target.value}, ...team.slice(i+1)]);
-                                }}
-                            />
-                          </label>
-                        </div>
+              {team.map((player, i) => {
+                return (
+                  <div>
+                    <div className={styles.About_team_remove_team}>
+                      <div className={styles.input_field}>Mate #{i + 1}</div>
+                      <div
+                        onClick={() => {
+                          setTeam([...team.slice(0, i), ...team.slice()]);
+                        }}
+                        className={styles.input_field}
+                      >
+                        ❌
                       </div>
-                  )
-                })
-              }
+                    </div>
+                    <div className={styles.input_field}>
+                      <label htmlFor="Name">
+                        Name
+                        <br />
+                        <input
+                          required
+                          type="text"
+                          value={player.name}
+                          onChange={(e) => {
+                            setTeam([
+                              ...team.slice(0, i),
+                              { ...player, name: e.target.value },
+                              ...team.slice(i + 1),
+                            ]);
+                          }}
+                        />
+                      </label>
+                    </div>
+                    <div className={styles.input_field}>
+                      <label htmlFor="LinkedIn">
+                        LinkedIn Profile
+                        <br />
+                        <input
+                          required
+                          type="url"
+                          value={player.linkedin}
+                          onChange={(e) => {
+                            setTeam([
+                              ...team.slice(0, i),
+                              { ...player, linkedin: e.target.value },
+                              ...team.slice(i + 1),
+                            ]);
+                          }}
+                        />
+                      </label>
+                    </div>
+                  </div>
+                );
+              })}
               <div className={styles.About_team_button_container}>
-                <button onClick={() => {setTeam([...team, {name:"", linkedin:""}])}}>
+                <button
+                  onClick={() => {
+                    setTeam([...team, { name: "", linkedin: "" }]);
+                  }}
+                >
                   Add teammates
                 </button>
               </div>
