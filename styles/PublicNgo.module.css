@@ -236,10 +236,13 @@
     border: none;
     text-align: center;
     letter-spacing: -0.5px;
-
+    cursor: pointer;
     color: #ffffff;
 
     opacity: 0.8;
+}
+.form button:hover{
+    background : #1d8080 ;
 }
 .trasaction_details {
     display: flex;
