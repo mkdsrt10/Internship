@@ -64,7 +64,7 @@ const PublicNgoPage = () => {
   return (
     <div className={styles.main_container}>
       <div className={style.top}>
-        <img src="/backgroungImage.png" />
+        <img src="/1.jpg" className={styles.top_image} />
       </div>
       <div className={styles.page_content}>
         <div className={styles.left}>
@@ -134,7 +134,7 @@ const PublicNgoPage = () => {
               With a bold ambition and a powerful vigilance, we do whatever it
               takes to save the children.
             </div>
-            <div>
+            <div className={styles.aboutus_image_container}>
               <img src="/girl_mobile.png" className={styles.aboutus_image} />
               <img src="/girl_mobile.png" className={styles.aboutus_image} />
               <img src="/girl_mobile.png" className={styles.aboutus_image} />
@@ -272,17 +272,17 @@ const PublicNgoPage = () => {
           <div className={styles.team_title}>Team</div>
           <div className={styles.team_members_list}>
             <div>
-              <img src="/mayank_bhaiya.png" />
+              <img src="/girl_mobile.png" />
               <br />
               <span>Mayank </span>
             </div>
             <div>
-              <img src="/mayank_bhaiya.png" />
+              <img src="/girl_mobile.png" />
               <br />
               <span>Mayank </span>
             </div>
             <div>
-              <img src="/mayank_bhaiya.png" />
+              <img src="/girl_mobile.png" />
               <br />
               <span>Mayank </span>
             </div>

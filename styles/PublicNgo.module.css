@@ -3,16 +3,17 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
-.top {
-}
-.top img {
+.top_image {
     width: 100vw;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
 }
 .page_content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .left {
     display: flex;
@@ -31,6 +32,7 @@
     border-radius: 10px;
     margin-left: 4rem;
     margin-top: -4rem;
+    object-fit: cover;
 }
 .title {
     display: flex;
@@ -300,6 +302,7 @@
 .cause_grid,
 .updates_grid {
     display: flex;
+    flex-wrap: wrap;
 }
 .cause_single_item,
 .updates_single_item {
@@ -314,6 +317,7 @@
 .updates_single_item img {
     width: 237px;
     height: 149px;
+    object-fit: cover;
 }
 .cause_single_item div,
 .updates_single_item div {
@@ -348,6 +352,7 @@
 .team {
     display: flex;
     margin: 1rem 0 1rem 0;
+    flex-wrap: wrap;
 }
 .team_left {
     display: flex;
@@ -368,6 +373,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .team_members_list div {
     display: flex;
@@ -379,6 +385,7 @@
     border: 3px solid #ffffff;
     filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.05));
     border-radius: 10px;
+    object-fit: cover;
 }
 .team_members_list span {
     text-align: center;
@@ -423,4 +430,80 @@
 
     align-items: center;
     justify-content: center;
+}
+@media  all and  (max-width: 750px)
+{
+    .top_image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .page_content{
+        display: flex;
+        flex-direction: column;
+    }
+    .head{
+        flex-direction: column;
+    }
+    .head img {
+        width: 60%;
+    }
+    .title{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+    .head button{
+        margin-left: 1rem;
+    }
+    .stats{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .aboutus{
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutus_image_container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .aboutus_image{
+        width: 100%;
+        object-fit: cover;
+        margin:1rem 0rem 1rem 0rem 
+    }
+    .right{
+        height: auto;
+        width: auto;
+        margin:0;
+        margin-top: 2rem;
+
+    }
+    .input_field input{
+        width: 17rem;
+    }
+    .team_left{
+        margin:1rem 0rem 0rem 1rem 
+    }
+    .team_members_list{
+        justify-content: space-around;
+    }
+    .trasaction_details div input{
+        width: 7rem;
+    }
+    .select {
+        width: 7rem;
+    }
+    .office{
+        margin:1rem
+    }
+    .office_details{
+        justify-content: flex-start;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+    }
+
 }
