@@ -1,38 +1,229 @@
 .home {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  font-size: 1.2rem;
   margin-left: 2rem;
+  margin-top: 2rem;
 }
-.home span {
-  font-size: 1.5rem;
-  margin-left: 1rem;
+.good_morning {
+  margin-bottom: 0.5rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  /* identical to box height, or 29px */
+
+  color: #868686;
+}
+.name {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  /* #272727 */
+
+  color: #182a43;
+  border-bottom: 1px solid #cecece;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
 }
-.quick_actions ,.at_a_glance{
+.overview {
+  display: flex;
+  flex-direction: column;
+}
+.overview_name {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #182a43;
+}
+.overview_content {
+  display: flex;
+  flex-direction: row;
+}
+.Page_view,
+.Donations_view {
+  width: 280px;
+  height: 142px;
+  background: #f6f6f8;
+  margin-right: 2rem;
+  border-radius: 10px;
+}
+.Page_view_title,
+.Donations_view_title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 120%;
+  margin-top: 1rem;
+
+  margin-left: 1rem;
+  color: #182a43;
+}
+.Page_view_title span,
+.Donations_view_title span {
+  margin-left: 5rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 120%;
+  /* identical to box height, or 30px */
+
+}
+.Page_view_subtitle,
+.Donations_view_subtitle {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 120%;
+  color: #868686;
+
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+}
+.quickActions {
+  display: flex;
+  flex-direction: column;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 120%;
+  /* identical to box height, or 24px */
+
+  letter-spacing: -0.02em;
+
+  /* #272727 */
+
+  color: #182a43;
+}
+.quickActions_name {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
+  margin: 2rem 0rem 1rem 0rem;
+}
+.quickActions_container {
+  width: 70%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: 1.2rem;
 }
-.quick_actions {
-    padding-bottom: 1rem ;
-    border-bottom: 1px solid #ccc;
-}
-.quick_actions span,.at_a_glance span{
-    margin-left: 1rem;
-    border: none;
-    width: 100%;
-    margin-top: 1rem;
-}
-.quick_actions_items ,.at_a_glance_items{
-  width: 12rem;
-  height: 4rem;
-  margin: 1rem;
-  font-size: 1.2rem;
-  padding: 0.3rem 0.1rem 0 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.quickActions_items {
+  width: 280px;
+  height: 65px;
+  background: #f6f6f8;
   border-radius: 10px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+.quickActions_items div {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+.wallet {
+  display: flex;
+  flex-direction: column;
+}
+.wallet_title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
+  margin-top: 2rem;
+}
+.connect_wallet {
+  max-width: 830px;
+  height: 218px;
+
+  background: rgba(206, 206, 206, 0.5);
+  border-radius: 20px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-bottom: 2rem;
+}
+.connect_wallet button {
+  width: 260px;
+  height: 45px;
+  color: white;
+  outline: none;
+  border: none;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  /* or 111% */
+
+  text-align: center;
+  letter-spacing: -0.5px;
+
+  color: #ffffff;
+  cursor: pointer;
+  background: #48b7b7;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.connect_wallet div {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: #182a43;
+}
+.pie_chart {
+  text-align: left;
+  margin-left: -7rem;
+  margin-top: -4rem;
+}
+.wallet_chart {
+  display: flex;
+  flex-direction: row;
+}
+.list_items {
+  margin-top: 4rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+.transaction {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-bottom: 2rem;
+}
+.transaction_title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
+  margin-bottom: 1rem;
 }

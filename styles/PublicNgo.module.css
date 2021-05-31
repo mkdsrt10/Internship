@@ -11,7 +11,7 @@
     object-fit: cover;
 }
 .page_content {
-    display: flex;
+    display: flex; 
     flex-direction: row;
     flex-wrap: wrap;
 }
