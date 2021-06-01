@@ -48,11 +48,12 @@
 .overview_content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .Page_view,
 .Donations_view {
   width: 280px;
-  height: 142px;
+  height: 165px;
   background: #f6f6f8;
   margin-right: 2rem;
   border-radius: 10px;
@@ -78,7 +79,6 @@
   font-weight: bold;
   font-size: 25px;
   /* identical to box height, or 30px */
-
 }
 .Page_view_subtitle,
 .Donations_view_subtitle {
@@ -91,6 +91,21 @@
 
   margin-top: 0.3rem;
   margin-left: 1rem;
+}
+.bar_chart_bottom {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 120%;
+  margin-right: 0.5rem;
+  /* or 14px */
+
+  color: #868686;
 }
 .quickActions {
   display: flex;
@@ -198,7 +213,7 @@
 }
 .pie_chart {
   text-align: left;
-  margin-left: -7rem;
+  margin-left: -6rem;
   margin-top: -4rem;
 }
 .wallet_chart {
@@ -215,7 +230,8 @@
 .transaction {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  max-width: 60%;
+  width: 100%;
   margin-bottom: 2rem;
 }
 .transaction_title {

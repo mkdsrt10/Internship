@@ -149,8 +149,13 @@ const Home = () => {
             <div className={styles.Page_view_subtitle}>
               All time : {"10000"}
               <BarChart width={250} height={60} data={data}>
-                <Bar dataKey="uv" fill="#EF7C6E" />
+                <Bar dataKey="uv" fill="#ef7c6e" />
               </BarChart>
+              <div className={styles.bar_chart_bottom}>
+                <li>{"vipin"}</li>
+                <li>{"vipin"}</li>
+                <li>{"vipin"}</li>
+              </div>
             </div>
           </div>
           <div className={styles.Donations_view}>
@@ -162,6 +167,11 @@ const Home = () => {
               <BarChart width={250} height={60} data={data}>
                 <Bar dataKey="uv" fill="#48B7B7" />
               </BarChart>
+              <div className={styles.bar_chart_bottom}>
+                <li>{"vipin"}</li>
+                <li>{"vipin"}</li>
+                <li>{"vipin"}</li>
+              </div>
             </div>
           </div>
         </div>
