@@ -176,6 +176,20 @@ const Audience = () => {
           </AreaChart>
         </div>
       </div>
+      <div className={styles.search}>
+        <div className={styles.search_icon}>
+          <img src="/search.svg" />
+        </div>
+        <div>
+          <input placeholder="Search" />
+        </div>
+        <div className={styles.add_people}>
+          <img src="/user-plus.svg" /> Add people
+        </div>
+        <div className={styles.download}>
+          <img src="/download.svg" />
+        </div>
+      </div>
       <div className={styles.transaction}>
         <Transaction_Table />
       </div>

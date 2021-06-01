@@ -65,18 +65,18 @@
   font-size: 20px;
   line-height: 120%;
   margin-top: 1rem;
-
+  display: flex;
+  flex-direction: row;
   margin-left: 1rem;
   color: #182a43;
 }
 .Page_view_title span,
 .Donations_view_title span {
-  margin-left: 5rem;
+  margin-left: 3rem;
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  line-height: 120%;
   /* identical to box height, or 30px */
 
 }
