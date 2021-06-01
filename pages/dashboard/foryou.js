@@ -7,7 +7,6 @@ import { menu_items } from "../../utility/constant";
 import { useRouter } from "next/router";
 const ui = "For You";
 const DashBoard = ({ user }) => {
-  const data = ["v", "v", "v", "v", "v", "v"];
   const router = useRouter();
   return (
     <div className={styles.main_container}>
@@ -42,30 +41,7 @@ const DashBoard = ({ user }) => {
           </div>
         </div>
         <div className={styles.DashBoard_content}>
-          <div className={styles.For_you}>
-            <div className={styles.For_you_title}>For You</div>
-            <div className={styles.For_you_subtitle}>
-              Stories from around the globe how they are using crypto for social
-              cause
-            </div>
-          </div>
-          <div className={styles.For_you_grid}>
-            {data.map((e) => {
-              return (
-                <div className={styles.grid_each}>
-                  <img src="/girl_mobile.png" />
-                  <div className={styles.grid_title}>
-                    Built school Playground in Sohagpur
-                  </div>
-                  <div className={styles.grid_description}>
-                    Stories from around the globe how they are using crypto for
-                    social cause
-                  </div>
-                  <div className={styles.read_more}>Read more {">>"}</div>
-                </div>
-              );
-            })}
-          </div>
+          <For_you/>
         </div>
       </div>
     </div>

@@ -8,24 +8,12 @@ const SignIn = ({ ui, setUi }) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    confirm_password: "",
     error: "",
   });
 
   const [dialog, setDialog] = useState({ show: false, message: "" });
   const SignInHandler = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirm_password) {
-      setForm({
-        ...form,
-        error: "Password and Confrim Password should be same",
-      });
-      setDialog({
-        show: true,
-        message: "Password and Confrim Password should be same",
-      });
-      return;
-    }
     try {
       const { user } = await Auth.signIn(form.email, form.password);
       console.log(user);
@@ -73,21 +61,6 @@ const SignIn = ({ ui, setUi }) => {
             />
           </label>
         </div>
-        <div className={styles.input_field}>
-          <label for="password">
-            Confirm Password
-            <br />
-            <input
-              required
-              type="password"
-              id="cpassword"
-              name="cpassword"
-              onChange={(e) => {
-                setForm({ ...form, confirm_password: e.target.value });
-              }}
-            />
-          </label>
-        </div>
         <button onClick={SignInHandler}>SignUp</button>
       </form>
       <div className={styles.social_signIn}>
@@ -119,7 +92,7 @@ const SignIn = ({ ui, setUi }) => {
             setUi("SignUp");
           }}
         >
-          SignUp
+          SignIn
         </span>
       </div>
       <DialogBox

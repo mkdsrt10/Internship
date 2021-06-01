@@ -1,0 +1,93 @@
+.main_container {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+}
+.head_greetings {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  color: #868686;
+}
+.head_title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: -0.015em;
+  color: #182a43;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #cecece;
+}
+.overview_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview_container_head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.overview_title {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  color: #182a43;
+}
+.overview_right {
+  width: 167px;
+  height: 35px;
+  background: #cecece;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  justify-content: center;
+  cursor: pointer;
+}
+.overview_right ul {
+  display: flex;
+  flex-direction: row;
+}
+.people {
+  flex: 1;
+  text-align: center;
+  align-items: center;
+  list-style: none;
+  margin-left: 0.1rem;
+}
+.donation {
+  flex: 1;
+  list-style: none;
+  text-align: center;
+  margin-right: 0.1rem;
+}
+.active_li_people,
+.active_li_Donation {
+  flex: 1;
+  background: #ffffff;
+  mix-blend-mode: normal;
+  list-style: none;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.graph {
+  margin-top: 2rem;
+  margin-left: -1rem;
+}
+.transaction {
+  width: 60%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}

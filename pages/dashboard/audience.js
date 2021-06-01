@@ -2,11 +2,12 @@ import styles from "../../styles/Dashboard.module.css";
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
 import { menu_items } from "../../utility/constant";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
+import Audience from "../../components/DashBoard/Audience";
 const ui = "Audience";
 
 const DashBoard = ({ user }) => {
-  const router=useRouter();
+  const router = useRouter();
   return (
     <div className={styles.main_container}>
       <div className={styles.DashBoard}>
@@ -38,7 +39,7 @@ const DashBoard = ({ user }) => {
           </div>
         </div>
         <div className={styles.DashBoard_content}>
-          <div>Audience</div>
+          <Audience />
         </div>
       </div>
     </div>
@@ -46,9 +47,9 @@ const DashBoard = ({ user }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const {Auth } =withSSRContext(context);
+  const { Auth } = withSSRContext(context);
   try {
-    const  user  = await Auth.currentAuthenticatedUser();
+    const user = await Auth.currentAuthenticatedUser();
     console.log(user);
     return {
       props: {
@@ -59,8 +60,8 @@ export const getServerSideProps = async (context) => {
     console.log(error);
     return {
       redirect: {
-        permanent:false,
-        destination:"/auth/profile"
+        permanent: false,
+        destination: "/auth/profile",
       },
     };
   }
