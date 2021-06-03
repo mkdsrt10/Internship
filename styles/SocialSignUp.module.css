@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.main_container span{
+.main_container span {
   width: 100%;
   font-size: 1.5rem;
   margin: 1rem 1rem 2rem 1rem;
@@ -56,7 +56,7 @@
   color: black;
   background-color: white;
   border: 1px solid #ccc;
-    margin-left: -1rem;
+  margin-left: -1rem;
   outline: none !important;
   border-radius: 20px;
   cursor: pointer;
@@ -67,16 +67,27 @@
 .login span {
   color: #48b7b7;
 }
-@media all and (max-width: 600px){
-  .main_container{
+@media all and (max-width: 600px) {
+  .main_container {
     margin: auto;
     padding: 0;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
   }
+  .main_container span {
+    margin: 1rem 1rem 2rem 0rem;
+    text-align: left;
+  }
   .input_field input,
   .input_field textarea {
     width: 15rem;
+  }
+  .main_container button {
+    width: 15rem;
+  }
+  .social_signIn button {
+    width: 15rem;
+    margin-left: 0rem;
   }
 }

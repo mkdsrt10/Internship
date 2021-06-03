@@ -61,7 +61,7 @@ const SignIn = ({ ui, setUi }) => {
             />
           </label>
         </div>
-        <button onClick={SignInHandler}>SignUp</button>
+        <button onClick={SignInHandler}>SignIn</button>
       </form>
       <div className={styles.social_signIn}>
         <button
@@ -92,7 +92,7 @@ const SignIn = ({ ui, setUi }) => {
             setUi("SignUp");
           }}
         >
-          SignIn
+          SignUp
         </span>
       </div>
       <DialogBox

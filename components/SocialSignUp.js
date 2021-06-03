@@ -74,6 +74,7 @@ const SocialSignIn = ({ ui, setUi }) => {
               onChange={(e) => {
                 const name = e.target.value.split(" ");
                 console.log(name[0]);
+                ngoDetails;
 
                 setForm({ ...form, firstname: name[0], lastname: name[1] });
               }}
@@ -173,7 +174,7 @@ const SocialSignIn = ({ ui, setUi }) => {
             console.log(user);
           }}
         >
-          SignIn with Google
+          SignUp with Google
         </button>
         <button
           onClick={async () => {
@@ -183,7 +184,7 @@ const SocialSignIn = ({ ui, setUi }) => {
             console.log(user);
           }}
         >
-          SignIn with Facebook
+          SignUp with Facebook
         </button>
       </div>
       <div className={styles.login}>

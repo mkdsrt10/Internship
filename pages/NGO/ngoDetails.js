@@ -3,7 +3,7 @@ import Chips, { Chip } from "react-chips";
 import { useState } from "react";
 const NgoDetails = () => {
   const [category, setCategory] = useState(["vipin"]);
-  const [teamform, setTeamform] = useState(["1"]);
+  const [teamform, setTeamform] = useState(["1"])
   const [form, setForm] = useState({
     ngoid: "",
     ngoName: "",

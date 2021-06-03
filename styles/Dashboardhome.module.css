@@ -219,6 +219,7 @@
 .wallet_chart {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .list_items {
   margin-top: 4rem;
@@ -242,4 +243,41 @@
   line-height: 120%;
   color: #182a43;
   margin-bottom: 1rem;
+}
+@media all and (max-width: 600px) {
+  .name {
+    width: 90%;
+  }
+  .Page_view,
+  .Donations_view {
+    margin-top: 1rem;
+  }
+  .wallet_chart {
+    display: flex;
+    flex-direction: column;
+  }
+  .home {
+    margin-left: 1.2rem;
+  }
+  .pie_chart {
+    margin-left: -5rem;
+  }
+  .list_items {
+    margin-left: 1rem;
+    margin-top: -2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .quickActions_container {
+    width: 90%;
+  }
+  .quickActions_items {
+    width: 350px;
+    height: 65px;
+
+    background: #f6f6f8;
+  }
+  .transaction{
+    width: 100%;
+  }
 }
