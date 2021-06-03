@@ -84,6 +84,8 @@
   margin-right: 0.1rem;
 }
 .graph {
+  width: 100%;
+  height: 300px;
   margin-top: 2rem;
   margin-left: -1rem;
 }
@@ -144,4 +146,28 @@
   width: 60%;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+@media all and (max-width:600px){
+  .main_container{
+    margin-left: 1rem;
+  }
+  .overview_container{
+    width: 95%;
+  }
+  .graph{
+    margin-top: 3em;
+  }
+  .search{
+    width: 90%;
+    margin-right: 0;
+  }
+  .search input {
+    flex-grow: 1;
+    width: 8rem;
+    font-size: 0.8rem;
+  }
+  .transaction{
+    width: 100%;
+    
+  }
 }

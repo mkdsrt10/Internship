@@ -167,8 +167,8 @@ const SocialSignIn = ({ ui, setUi }) => {
 
       <div className={styles.social_signIn}>
         <button
-          onClick={async () => {
-            const { user } = await Auth.federatedSignIn({
+          onClick={async (e) => {
+            const user = await Auth.federatedSignIn({
               provider: "Google",
             });
             console.log(user);

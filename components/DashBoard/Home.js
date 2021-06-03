@@ -204,17 +204,17 @@ const Home = () => {
           </div>
         ) : (
           <div className={styles.wallet_chart}>
-            <PieChart width={400} height={400} className={styles.pie_chart}>
-              <Pie
-                dataKey="value"
-                isAnimationActive={false}
-                data={data01}
-                cx="50%"
-                cy="50%"
-                outerRadius={80}
-              />
-              <Tooltip />
-            </PieChart>
+              <PieChart width={400} height={400} className={styles.pie_chart}>
+                <Pie
+                  dataKey="value"
+                  isAnimationActive={false}
+                  data={data01}
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                />
+                <Tooltip />
+              </PieChart>
             <div className={styles.list_items}>
               {data01.map((data) => {
                 return (
