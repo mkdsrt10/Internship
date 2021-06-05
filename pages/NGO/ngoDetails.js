@@ -2,14 +2,36 @@ import styles from "../../styles/NgoDetails.module.css";
 import Chips, { Chip } from "react-chips";
 import { useState } from "react";
 const NgoDetails = () => {
+  const ClickHandler = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
+  const teamInputHandler = (e, index) => {
+    console.log(e.target.name);
+    const values = [...form.team];
+    values[index][e.target.name] = e.target.value;
+    setForm({ ...form, team: values });
+    console.log(form.team);
+  };
+  const DeleteHandler = (e, index) => {
+    const values = [...form.team];
+    values.splice(index, 1);
+    setForm({ ...form, team: values });
+  };
   const [category, setCategory] = useState(["vipin"]);
-  const [teamform, setTeamform] = useState(["1"])
+  const [teamform, setTeamform] = useState(["1"]);
   const [form, setForm] = useState({
     ngoid: "",
     ngoName: "",
     ngoAddress: "",
     areaOperation: "",
     description: "",
+    social_links: {
+      facebook: "",
+      linkedIn: "",
+      website: "",
+    },
+    team: [{ Name: "", Designation: "", LinkedIn: "", Twitter: "", image: "" }],
   });
   return (
     <div className={styles.main_container}>
@@ -24,6 +46,7 @@ const NgoDetails = () => {
                 required
                 type="text"
                 id="NGOid"
+                value={form.ngoid}
                 name="ngoid"
                 onChange={(e) => {
                   setForm({ ...form, ngoid: e.target.value });
@@ -40,6 +63,7 @@ const NgoDetails = () => {
                 type="text"
                 id="ngoName"
                 name="ngoName"
+                value={form.ngoName}
                 onChange={(e) => {
                   setForm({ ...form, ngoName: e.target.value });
                 }}
@@ -55,6 +79,7 @@ const NgoDetails = () => {
                 type="text"
                 id="ngoAddress"
                 name="ngoAddress"
+                value={form.ngoAddress}
                 onChange={(e) => {
                   setForm({ ...form, ngoAddress: e.target.value });
                 }}
@@ -70,6 +95,7 @@ const NgoDetails = () => {
                 type="text"
                 id="areaOperation"
                 name="areaOperation"
+                value={form.areaOperation}
                 onChange={(e) => {
                   setForm({ ...form, areaOperation: e.target.value });
                 }}
@@ -84,6 +110,7 @@ const NgoDetails = () => {
                 required
                 type="text"
                 id="description"
+                value={form.description}
                 name="description"
                 onChange={(e) => {
                   setForm({ ...form, description: e.target.value });
@@ -96,6 +123,7 @@ const NgoDetails = () => {
               Image
               <br />
               <input
+                required
                 type="file"
                 name="myImage"
                 accept="image/png, image/gif, image/jpeg"
@@ -109,108 +137,192 @@ const NgoDetails = () => {
               <label for="Facbook">
                 Facbook profile
                 <br />
-                <input type="url" name="url" id="url" />
+                <input
+                  type="url"
+                  name="url"
+                  id="url"
+                  value={form.social_links.facebook}
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      social_links: { facebook: e.target.value },
+                    });
+                  }}
+                />
               </label>
             </div>
             <div className={styles.input_field}>
               <label for="LinkedIn">
                 LinkedIn
                 <br />
-                <input type="url" id="url" name="url" />
+                <input
+                  type="url"
+                  id="url"
+                  name="url"
+                  value={form.social_links.linkedIn}
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      social_links: { linkedIn: e.target.value },
+                    });
+                  }}
+                />
               </label>
             </div>
             <div className={styles.input_field}>
               <label for="Website">
                 Website
                 <br />
-                <input type="url" id="url" name="url" />
+                <input
+                  type="url"
+                  id="url"
+                  name="url"
+                  value={form.social_links.website}
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      social_links: { website: e.target.value },
+                    });
+                  }}
+                />
               </label>
             </div>
           </div>
         </div>
         <div className={styles.team_members}>
           <span>Team Members</span>
-          {teamform.map((team,index) => {
-            return (
-              <div className={styles.team_members_form}>
-                {" "}
-                <span>Team Member {index+1}</span>
-                <div className={styles.input_field}>
-                  <label for="Name">
-                    Name
-                    <br />
-                    <input
-                      required
-                      type="text"
-                      id="Name"
-                      name="Name"
-                      onChange={(e) => {}}
-                    />
-                  </label>
+          <div className={styles.all_team}>
+            {form.team.map((team, index) => {
+              return (
+                <div className={styles.team_members_form} key={index}>
+                  {" "}
+                  <div className={styles.remove_team}>
+                    <div>
+                      <span>Team Member {index + 1}</span>
+                    </div>
+                    {index > 0 ? (
+                      <div
+                        onClick={(e) => {
+                          DeleteHandler(e, index);
+                        }}
+                        className={styles.cross}
+                      >
+                        ❌
+                      </div>
+                    ) : (
+                      <div></div>
+                    )}
+                  </div>
+                  <div className={styles.input_field}>
+                    <label for="Name">
+                      Name
+                      <br />
+                      <input
+                        required
+                        type="text"
+                        id="Name"
+                        name="Name"
+                        value={form.team[index].Name}
+                        onChange={(e) => {
+                          teamInputHandler(e, index);
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <div className={styles.input_field}>
+                    <label for="Designation">
+                      Designation
+                      <br />
+                      <input
+                        required
+                        type="text"
+                        id="Designation"
+                        name="Designation"
+                        value={form.team[index].Designation}
+                        onChange={(e) => {
+                          teamInputHandler(e, index);
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <div className={styles.input_field}>
+                    <label for="LinkedIn">
+                      LinkedIn
+                      <br />
+                      <input
+                        required
+                        type="text"
+                        id="LinkedIn"
+                        name="LinkedIn"
+                        value={form.team[index].LinkedIn}
+                        onChange={(e) => {
+                          teamInputHandler(e, index);
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <div className={styles.input_field}>
+                    <label for="Twitter">
+                      Twitter
+                      <br />
+                      <input
+                        required
+                        type="text"
+                        id="Twitter"
+                        name="Twitter"
+                        value={form.team[index].Twitter}
+                        onChange={(e) => {
+                          teamInputHandler(e, index);
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <div className={styles.input_field}>
+                    <label for="Image">
+                      Image
+                      <br />
+                      <input
+                        required
+                        type="file"
+                        name="image"
+                        accept="image/png, image/gif, image/jpeg"
+                        value={form.team[index].image}
+                        onChange={(e) => {
+                          teamInputHandler(e, index);
+                        }}
+                      />
+                    </label>
+                  </div>
                 </div>
-                <div className={styles.input_field}>
-                  <label for="Designation">
-                    Designation
-                    <br />
-                    <input
-                      required
-                      type="text"
-                      id="Designation"
-                      name="Designation"
-                      onChange={(e) => {
-                        setForm({ ...form, ngoName: e.target.value });
-                      }}
-                    />
-                  </label>
-                </div>
-                <div className={styles.input_field}>
-                  <label for="LinkedIn">
-                    LinkedIn
-                    <br />
-                    <input
-                      required
-                      type="text"
-                      id="LinkedIn"
-                      name="LinkedIn"
-                      onChange={(e) => {}}
-                    />
-                  </label>
-                </div>
-                <div className={styles.input_field}>
-                  <label for="Twitter">
-                    Twitter
-                    <br />
-                    <input
-                      required
-                      type="text"
-                      id="Twitter"
-                      name="Twitter"
-                      onChange={(e) => {
-                        setForm({ ...form, areaOperation: e.target.value });
-                      }}
-                    />
-                  </label>
-                </div>
-                <div className={styles.input_field}>
-                  <label for="Image">
-                    Image
-                    <br />
-                    <input
-                      type="file"
-                      name="Image"
-                      accept="image/png, image/gif, image/jpeg"
-                    />
-                  </label>
-                </div>
-              </div>
-            );
-          })}
-          <div onClick={(e) => setTeamform([...teamform, e.target.value])}>
+              );
+            })}
+          </div>
+
+          <div
+            onClick={(e) => {
+              setForm({
+                ...form,
+                team: [
+                  ...form.team,
+                  {
+                    Name: "",
+                    Designation: "",
+                    LinkedIn: "",
+                    Twitter: "",
+                    image: "",
+                  },
+                ],
+              });
+            }}
+            className={styles.add_button_team}
+          >
             Add Member
           </div>
         </div>
         <div className={styles.button_container}>
-          <button type="submit">Register</button>
+          <button type="submit" onClick={ClickHandler}>
+            Register
+          </button>
         </div>
       </div>
     </div>

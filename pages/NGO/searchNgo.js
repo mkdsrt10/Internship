@@ -9,6 +9,10 @@ const SearchNgo = () => {
   const [tag, setTag] = useState([""]);
   const [ngoList, setNgoList] = useState([
     { category: "India", location: "India" },
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
     { category: "Australia", location: "Australia" },
     { category: "India", location: "India" },
   ]);
@@ -18,11 +22,7 @@ const SearchNgo = () => {
     "Australia",
     "South Africa",
   ]);
-  const [categorys, setCategorys] = useState([
-    "A",
-    "B",
-    "C",
-  ]);
+  const [categorys, setCategorys] = useState(["A", "B", "C"]);
   const onChangeListner = (e) => {
     console.log(tag);
     var flag = 0;
@@ -58,11 +58,15 @@ const SearchNgo = () => {
   }, [tag]);
   return (
     <div className={styles.main_conatiner}>
-      <div className={styles.search_bar}>
-        <input placeholder="Search" type="text" onChange={(e) => {}} />
-      </div>
       <div className={styles.search_container}>
         <div className={styles.filter}>
+          <div className={styles.search_bar}>
+            <input
+              placeholder="Search NGOs ....."
+              type="text"
+              onChange={(e) => {}}
+            />
+          </div>
           <span>Category</span>
           <div className={styles.category}>
             {categorys.map((c, index) => {
@@ -115,17 +119,14 @@ const SearchNgo = () => {
     </div>
   );
 };
-export const getServerSideProps= async(context)=>{
-  var {page}=context.query;
-  if(page===undefined){
-    page=1;
+export const getServerSideProps = async (context) => {
+  var { page } = context.query;
+  if (page === undefined) {
+    page = 1;
   }
   console.log(page);
   return {
-    props:{
-      
-    }
-  }
-
-}
+    props: {},
+  };
+};
 export default SearchNgo;

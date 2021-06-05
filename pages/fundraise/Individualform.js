@@ -2,7 +2,7 @@ import styles from "../../styles/Individualform.module.css";
 import Select from "react-select";
 import { useState } from "react";
 import options from "../../utility/crypto_options";
-import Categories_options from "../../utility/categories_options"
+import Categories_options from "../../utility/categories_options";
 const IndividualForm = () => {
   const [form, setForm] = useState({
     firstname: " ",
@@ -15,11 +15,23 @@ const IndividualForm = () => {
     how_much_to_raise: "",
     cryptos: [],
     categories: [],
+    team: [{ name: "", linkedin: "" }],
   });
-  const [team, setTeam] = useState([{ name: "", linkedin: "" }]);
+  //const [team, setTeam] = useState([{ name: "", linkedin: "" }]);
   const FormHandler = (e) => {
     // API_LEFT
     console.log(form);
+  };
+  const AddteamInfoHandler = (e, index) => {
+    const values = [...form.team];
+    values[index][e.target.name] = e.target.value;
+    setForm({ ...form, team: values });
+    console.log(form.team);
+  };
+  const DeleteteamHanlder = (e, index) => {
+    const values = [...form.team];
+    values.splice(index, 1);
+    setForm({ ...form, team: values });
   };
   return (
     <div className={styles.main_container}>
@@ -152,7 +164,9 @@ const IndividualForm = () => {
                   placeholder={"Category"}
                   value={form.categories}
                   closeMenuOnSelect={false}
-                  onChange={(e) => {setForm({...form,categories:e})}}
+                  onChange={(e) => {
+                    setForm({ ...form, categories: e });
+                  }}
                 />
               </label>
             </div>
@@ -160,19 +174,23 @@ const IndividualForm = () => {
           <div className={styles.About_team}>
             <span>About team</span>
             <div className={styles.About_team_row}>
-              {team.map((player, i) => {
+              {form.team.map((player, i) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <div className={styles.About_team_remove_team}>
                       <div className={styles.input_field}>Mate #{i + 1}</div>
-                      <div
-                        onClick={() => {
-                          setTeam([...team.slice(0, i), ...team.slice()]);
-                        }}
-                        className={styles.input_field}
-                      >
-                        ❌
-                      </div>
+                      {i > 0 ? (
+                        <div
+                          onClick={(e) => {
+                            DeleteteamHanlder(e, i);
+                          }}
+                          className={styles.input_field}
+                        >
+                          ❌
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
                     </div>
                     <div className={styles.input_field}>
                       <label htmlFor="Name">
@@ -181,13 +199,10 @@ const IndividualForm = () => {
                         <input
                           required
                           type="text"
-                          value={player.name}
+                          name="name"
+                          value={form.team[i].name}
                           onChange={(e) => {
-                            setTeam([
-                              ...team.slice(0, i),
-                              { ...player, name: e.target.value },
-                              ...team.slice(i + 1),
-                            ]);
+                            AddteamInfoHandler(e, i);
                           }}
                         />
                       </label>
@@ -199,13 +214,10 @@ const IndividualForm = () => {
                         <input
                           required
                           type="url"
-                          value={player.linkedin}
+                          name="linkedIn"
+                          value={form.team[i].linkedin}
                           onChange={(e) => {
-                            setTeam([
-                              ...team.slice(0, i),
-                              { ...player, linkedin: e.target.value },
-                              ...team.slice(i + 1),
-                            ]);
+                            AddteamInfoHandler(e, i);
                           }}
                         />
                       </label>
@@ -215,8 +227,12 @@ const IndividualForm = () => {
               })}
               <div className={styles.About_team_button_container}>
                 <button
-                  onClick={() => {
-                    setTeam([...team, { name: "", linkedin: "" }]);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setForm({
+                      ...form,
+                      team: [...form.team, { name: "", linkedin: "" }],
+                    });
                   }}
                 >
                   Add teammates
