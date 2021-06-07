@@ -145,6 +145,7 @@
   border-radius: 10px;
   margin-right: 2rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .quickActions_items div {
   margin-left: 2rem;
@@ -277,7 +278,7 @@
 
     background: #f6f6f8;
   }
-  .transaction{
+  .transaction {
     width: 100%;
   }
 }

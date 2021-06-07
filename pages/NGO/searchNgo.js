@@ -5,7 +5,7 @@ import styles from "../../styles/SearchNgo.module.css";
 import Pagination from "next-pagination";
 import "next-pagination/dist/index.css";
 
-const SearchNgo = () => {
+const SearchNgo = ({data}) => {
   const [tag, setTag] = useState([""]);
   const [ngoList, setNgoList] = useState([
     { category: "India", location: "India" },
@@ -41,6 +41,7 @@ const SearchNgo = () => {
     }
   };
   useEffect(() => {
+    console.log(data);
     if (tag.length > 0 && tag[0] == "" && tag.length > 1) {
       setNgoFilterList(
         ngoList.filter((ngo) => {
@@ -124,9 +125,23 @@ export const getServerSideProps = async (context) => {
   if (page === undefined) {
     page = 1;
   }
-  console.log(page);
-  return {
-    props: {},
-  };
+  try {
+    const data = await fetch(
+      "https://zj0tskm7eh.execute-api.ap-south-1.amazonaws.com/dev/getNgo"
+    );
+    const res=await data.json();
+    console.log(res);
+    return {
+      props: {
+        data: res,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: error,
+      },
+    };
+  }
 };
 export default SearchNgo;

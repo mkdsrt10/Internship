@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useState } from "react";
 import options from "../../utility/crypto_options";
 import Categories_options from "../../utility/categories_options";
+import axios from "axios";
 const IndividualForm = () => {
   const [form, setForm] = useState({
     firstname: " ",
@@ -17,10 +18,15 @@ const IndividualForm = () => {
     categories: [],
     team: [{ name: "", linkedin: "" }],
   });
-  //const [team, setTeam] = useState([{ name: "", linkedin: "" }]);
-  const FormHandler = (e) => {
-    // API_LEFT
-    console.log(form);
+  const onSubmitFormHandler = (e) => {
+    const res = axios.post(
+      "https://zj0tskm7eh.execute-api.ap-south-1.amazonaws.com/dev/createFundraiserIndividual",
+      form,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    console.log(res);
   };
   const AddteamInfoHandler = (e, index) => {
     const values = [...form.team];
@@ -272,7 +278,7 @@ const IndividualForm = () => {
           </div>
         </form>
         <div className={styles.button_container}>
-          <button type="submit" onClick={FormHandler}>
+          <button type="submit" onClick={onSubmitFormHandler}>
             Create the fundraise
           </button>
         </div>

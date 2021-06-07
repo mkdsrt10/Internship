@@ -16,6 +16,7 @@
     "@walletconnect/web3-provider": "^1.4.1",
     "authereum": "^0.0.1",
     "aws-amplify": "^3.4.3",
+    "axios": "^0.21.1",
     "bitski": "^0.11.0-beta.4",
     "emotion": "^11.0.0",
     "next": "^10.2.3",

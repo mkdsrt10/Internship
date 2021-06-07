@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "../../src/config_Amplify";
 import { menu_items } from "../../utility/constant";
 import { useRouter } from "next/router";
-import Audience from "../../components/DashBoard/Audience";
+import Audience from "../../components/DashBoard/Audience"; 
 const ui = "Audience";
 
 const DashBoard = ({ user, dashboard, setDashboard }) => {
@@ -16,7 +16,12 @@ const DashBoard = ({ user, dashboard, setDashboard }) => {
     <div className={styles.main_container}>
       <div className={styles.DashBoard}>
         <div className={styles.DashBoard_menu}>
-          <div className={styles.logo}>
+          <div
+            className={styles.logo}
+            onClick={(e) => {
+              router.push("/");
+            }}
+          >
             Crypto<span>Funds</span>
           </div>
           {menu_items.map((item, index) => {

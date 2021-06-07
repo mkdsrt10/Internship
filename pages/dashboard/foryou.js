@@ -15,7 +15,12 @@ const DashBoard = ({ user, dashboard, setDashboard }) => {
     <div className={styles.main_container}>
       <div className={styles.DashBoard}>
         <div className={styles.DashBoard_menu}>
-          <div className={styles.logo}>
+          <div
+            className={styles.logo}
+            onClick={(e) => {
+              router.push("/");
+            }}
+          >
             Crypto<span>Funds</span>
           </div>
           {menu_items.map((item, index) => {

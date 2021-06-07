@@ -1,10 +1,18 @@
 import styles from "../../styles/NgoDetails.module.css";
 import Chips, { Chip } from "react-chips";
 import { useState } from "react";
+import axios from "axios";
 const NgoDetails = () => {
-  const ClickHandler = (e) => {
-    e.preventDefault();
+  const onSubmitClickHandler = async (e) => {
     console.log(form);
+    const res = await axios.post(
+      "https://zj0tskm7eh.execute-api.ap-south-1.amazonaws.com/dev/createNgo",
+      form,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    console.log(res);
   };
   const teamInputHandler = (e, index) => {
     console.log(e.target.name);
@@ -145,7 +153,10 @@ const NgoDetails = () => {
                   onChange={(e) => {
                     setForm({
                       ...form,
-                      social_links: { facebook: e.target.value },
+                      social_links: {
+                        ...form.social_links,
+                        facebook: e.target.value,
+                      },
                     });
                   }}
                 />
@@ -163,7 +174,10 @@ const NgoDetails = () => {
                   onChange={(e) => {
                     setForm({
                       ...form,
-                      social_links: { linkedIn: e.target.value },
+                      social_links: {
+                        ...form.social_links,
+                        linkedIn: e.target.value,
+                      },
                     });
                   }}
                 />
@@ -181,7 +195,10 @@ const NgoDetails = () => {
                   onChange={(e) => {
                     setForm({
                       ...form,
-                      social_links: { website: e.target.value },
+                      social_links: {
+                        ...form.social_links,
+                        website: e.target.value,
+                      },
                     });
                   }}
                 />
@@ -320,7 +337,7 @@ const NgoDetails = () => {
           </div>
         </div>
         <div className={styles.button_container}>
-          <button type="submit" onClick={ClickHandler}>
+          <button type="submit" onClick={onSubmitClickHandler}>
             Register
           </button>
         </div>
