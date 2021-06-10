@@ -7,14 +7,20 @@ import SignInForm from "../../components/SignIn";
 import { useRouter } from "next/router";
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 
-function Profile({authenticated}) {
+function Profile({ authenticated }) {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [ui, setUi] = useState();
+
+
   useEffect(() => {
-    if(authenticated==false){
-      setUi("SignUp");
+    if (authenticated == false) {
+      setUi("SignIn");
     }
   }, []);
   return (
@@ -69,7 +75,7 @@ export const getServerSideProps = async (context) => {
     console.log(error);
     return {
       props: {
-        authenticated:false,
+        authenticated: false,
       },
     };
   }

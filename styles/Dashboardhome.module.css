@@ -48,11 +48,12 @@
 .overview_content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .Page_view,
 .Donations_view {
   width: 280px;
-  height: 142px;
+  height: 165px;
   background: #f6f6f8;
   margin-right: 2rem;
   border-radius: 10px;
@@ -65,20 +66,19 @@
   font-size: 20px;
   line-height: 120%;
   margin-top: 1rem;
-
+  display: flex;
+  flex-direction: row;
   margin-left: 1rem;
   color: #182a43;
 }
 .Page_view_title span,
 .Donations_view_title span {
-  margin-left: 5rem;
+  margin-left: 3rem;
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  line-height: 120%;
   /* identical to box height, or 30px */
-
 }
 .Page_view_subtitle,
 .Donations_view_subtitle {
@@ -91,6 +91,21 @@
 
   margin-top: 0.3rem;
   margin-left: 1rem;
+}
+.bar_chart_bottom {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 120%;
+  margin-right: 0.5rem;
+  /* or 14px */
+
+  color: #868686;
 }
 .quickActions {
   display: flex;
@@ -130,6 +145,7 @@
   border-radius: 10px;
   margin-right: 2rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .quickActions_items div {
   margin-left: 2rem;
@@ -198,12 +214,13 @@
 }
 .pie_chart {
   text-align: left;
-  margin-left: -7rem;
+  margin-left: -6rem;
   margin-top: -4rem;
 }
 .wallet_chart {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .list_items {
   margin-top: 4rem;
@@ -215,7 +232,8 @@
 .transaction {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  max-width: 60%;
+  width: 100%;
   margin-bottom: 2rem;
 }
 .transaction_title {
@@ -226,4 +244,41 @@
   line-height: 120%;
   color: #182a43;
   margin-bottom: 1rem;
+}
+@media all and (max-width: 600px) {
+  .name {
+    width: 90%;
+  }
+  .Page_view,
+  .Donations_view {
+    margin-top: 1rem;
+  }
+  .wallet_chart {
+    display: flex;
+    flex-direction: column;
+  }
+  .home {
+    margin-left: 1.2rem;
+  }
+  .pie_chart {
+    margin-left: -5rem;
+  }
+  .list_items {
+    margin-left: 1rem;
+    margin-top: -2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .quickActions_container {
+    width: 90%;
+  }
+  .quickActions_items {
+    width: 350px;
+    height: 65px;
+
+    background: #f6f6f8;
+  }
+  .transaction {
+    width: 100%;
+  }
 }

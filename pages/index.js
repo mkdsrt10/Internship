@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import router from "next/router";
 const Home = () => {
   const clickhandler=(e)=>{
-    router.push("/fundraise");
+    router.push("/auth/profile");
   }
   async function getStories() {
       const stories = await fetch(  "/api/getStories").then((r) => r.json());

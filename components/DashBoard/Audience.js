@@ -8,6 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 const data = [
   {
@@ -151,29 +152,42 @@ const Audience = () => {
           </div>
         </div>
         <div className={styles.graph}>
-          <AreaChart
-            width={700}
-            height={200}
-            data={data}
-            type="triangle"
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area
+          <ResponsiveContainer>
+            <AreaChart
+              data={data}
               type="triangle"
-              dataKey="uv"
-              stroke="#8884d8"
-              fill="#F7931A"
-            />
-          </AreaChart>
+              margin={{
+                top: 10,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Area
+                type="triangle"
+                dataKey="uv"
+                stroke="#8884d8"
+                fill="#F7931A"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+      <div className={styles.search}>
+        <div className={styles.search_icon}>
+          <img src="/search.svg" />
+        </div>
+        <div>
+          <input placeholder="Search" />
+        </div>
+        <div className={styles.add_people}>
+          <img src="/user-plus.svg" /> Add people
+        </div>
+        <div className={styles.download}>
+          <img src="/download.svg" />
         </div>
       </div>
       <div className={styles.transaction}>

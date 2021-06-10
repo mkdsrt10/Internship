@@ -5,9 +5,13 @@ import styles from "../../styles/SearchNgo.module.css";
 import Pagination from "next-pagination";
 import "next-pagination/dist/index.css";
 
-const SearchNgo = () => {
+const SearchNgo = ({data}) => {
   const [tag, setTag] = useState([""]);
   const [ngoList, setNgoList] = useState([
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
+    { category: "India", location: "India" },
     { category: "India", location: "India" },
     { category: "Australia", location: "Australia" },
     { category: "India", location: "India" },
@@ -18,11 +22,7 @@ const SearchNgo = () => {
     "Australia",
     "South Africa",
   ]);
-  const [categorys, setCategorys] = useState([
-    "A",
-    "B",
-    "C",
-  ]);
+  const [categorys, setCategorys] = useState(["A", "B", "C"]);
   const onChangeListner = (e) => {
     console.log(tag);
     var flag = 0;
@@ -41,6 +41,7 @@ const SearchNgo = () => {
     }
   };
   useEffect(() => {
+    console.log(data);
     if (tag.length > 0 && tag[0] == "" && tag.length > 1) {
       setNgoFilterList(
         ngoList.filter((ngo) => {
@@ -58,11 +59,15 @@ const SearchNgo = () => {
   }, [tag]);
   return (
     <div className={styles.main_conatiner}>
-      <div className={styles.search_bar}>
-        <input placeholder="Search" type="text" onChange={(e) => {}} />
-      </div>
       <div className={styles.search_container}>
         <div className={styles.filter}>
+          <div className={styles.search_bar}>
+            <input
+              placeholder="Search NGOs ....."
+              type="text"
+              onChange={(e) => {}}
+            />
+          </div>
           <span>Category</span>
           <div className={styles.category}>
             {categorys.map((c, index) => {
@@ -115,17 +120,28 @@ const SearchNgo = () => {
     </div>
   );
 };
-export const getServerSideProps= async(context)=>{
-  var {page}=context.query;
-  if(page===undefined){
-    page=1;
+export const getServerSideProps = async (context) => {
+  var { page } = context.query;
+  if (page === undefined) {
+    page = 1;
   }
-  console.log(page);
-  return {
-    props:{
-      
-    }
+  try {
+    const data = await fetch(
+      "https://zj0tskm7eh.execute-api.ap-south-1.amazonaws.com/dev/getNgo"
+    );
+    const res=await data.json();
+    console.log(res);
+    return {
+      props: {
+        data: res,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: error,
+      },
+    };
   }
-
-}
+};
 export default SearchNgo;

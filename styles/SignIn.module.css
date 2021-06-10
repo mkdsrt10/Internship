@@ -66,3 +66,19 @@
   border-radius: 20px;
   cursor: pointer;
 }
+@media all and (max-width: 600px) {
+  .main_container{
+    margin-left: -1rem;
+    margin-top: -4rem;
+  } 
+  .input_field input,
+  .input_field textarea {
+    width: 15rem;
+  }
+  .main_container button {
+    width: 15rem;
+  }
+  .social_signIn button {
+    width: 15rem;
+  }
+}

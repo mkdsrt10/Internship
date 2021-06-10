@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: row;
 }
+.container_deactivate{
+  display: none;
+  margin: 0;
+}
 .nav {
   flex: 9;
   display: flex;

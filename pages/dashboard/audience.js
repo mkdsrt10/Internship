@@ -1,17 +1,29 @@
 import styles from "../../styles/Dashboard.module.css";
 import { withSSRContext } from "aws-amplify";
+import { useEffect, useState } from "react";
 import "../../src/config_Amplify";
 import { menu_items } from "../../utility/constant";
 import { useRouter } from "next/router";
-import Audience from "../../components/DashBoard/Audience";
+import Audience from "../../components/DashBoard/Audience"; 
 const ui = "Audience";
 
-const DashBoard = ({ user }) => {
+const DashBoard = ({ user, dashboard, setDashboard }) => {
+  useEffect(() => {
+    setDashboard(false);
+  }, []);
   const router = useRouter();
   return (
     <div className={styles.main_container}>
       <div className={styles.DashBoard}>
         <div className={styles.DashBoard_menu}>
+          <div
+            className={styles.logo}
+            onClick={(e) => {
+              router.push("/");
+            }}
+          >
+            Crypto<span>Funds</span>
+          </div>
           {menu_items.map((item, index) => {
             return (
               <div

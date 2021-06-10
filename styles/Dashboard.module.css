@@ -1,12 +1,29 @@
 .main_container {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
-
 }
 .DashBoard {
   display: flex;
   flex-direction: row;
+}
+.logo {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6rem;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  /* #272727 */
+
+  color: #182a43;
+}
+.logo span {
+  color: #EF7C6E;
 }
 .DashBoard_menu {
   display: flex;
@@ -17,12 +34,13 @@
   padding-top: 4rem;
   background: #f6f6f8;
   margin-top: -1rem;
-  height: 100vh;
   font-family: DM Sans;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
+  /* identical to box height, or 29px */
+
   color: #182a43;
   height: 100vh;
 }
