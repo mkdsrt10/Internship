@@ -19,7 +19,7 @@
     "axios": "^0.21.1",
     "bitski": "^0.11.0-beta.4",
     "emotion": "^11.0.0",
-    "ethereumjs-abi": "*",
+    "ethereumjs-abi": "^0.6.8",
     "next": "^10.2.3",
     "next-pagination": "^2.1.1",
     "react": "17.0.2",
