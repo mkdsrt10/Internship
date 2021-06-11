@@ -5,7 +5,14 @@ import data from "../../utility/data";
 import Transaction_Table from "../Transaction_Table";
 import { useEffect, useState } from "react";
 import router from "next/router";
-const Home = () => {
+import { Bitski } from "bitski";
+import tokenABI from "../../utility/tokenABI";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import Authereum from "authereum";
+import Web3 from "web3";
+
+import Web3Modal from "web3modal";
+const Home = ({Token}) => {
   const d = new Date();
   const [Greetings, setGreetings] = useState("");
   const time = d.getHours();
@@ -20,7 +27,40 @@ const Home = () => {
     } else {
       setGreetings("Good Night");
     }
+    ConnectWalletHandler();
   }, []);
+  const ConnectWalletHandler=async(e)=>{
+     const providerOptions = {
+       walletconnect: {
+         package: WalletConnectProvider, // required
+         options: {
+           infuraId: "INFURA_ID", // required
+         },
+       },
+       bitski: {
+         package: Bitski, // required
+         options: {
+           clientId: "BITSKI_CLIENT_ID", // required
+           callbackUrl: "BITSKI_CALLBACK_URL", // required
+         },
+       },
+       authereum: {
+         package: Authereum, // required
+       },
+     };
+     const web3Modal = new Web3Modal({
+       network: "mainnet", // optional
+       cacheProvider: true, // optional
+       providerOptions, // required
+     });
+
+     const provider = await web3Modal.connect();
+     const web3 = new Web3(provider);
+     if(web3!=undefined){
+       setWallet(true);
+     }
+    
+  }
   const ViewNgoPageHandler=(e)=>{
     router.push("/NGO/vipnipvin")
 
@@ -99,7 +139,7 @@ const Home = () => {
         <div className={styles.wallet_title}>Wallet Overview</div>
         {wallet == false ? (
           <div className={styles.connect_wallet}>
-            <button>CONNECT YOUR WALLET</button>
+            <button onClick={ConnectWalletHandler}>CONNECT YOUR WALLET</button>
             <div>Read about wallets here</div>
           </div>
         ) : (
@@ -107,9 +147,9 @@ const Home = () => {
             <div className={styles.wallet_chart}>
               <PieChart width={400} height={400} className={styles.pie_chart}>
                 <Pie
-                  dataKey="value"
+                  dataKey="balance"
                   isAnimationActive={false}
-                  data={data01}
+                  data={Token}
                   cx="50%"
                   cy="50%"
                   outerRadius={80}
@@ -117,11 +157,11 @@ const Home = () => {
                 <Tooltip />
               </PieChart>
               <div className={styles.list_items}>
-                {data01.map((data) => {
+                {Token.map((token,index) => {
                   return (
-                    <ul>
-                      <div style={{ color: data.fill }}>
-                        <li>{data.name + `(${data.value})`}</li>
+                    <ul key={index}>
+                      <div style={{color:token.fill}} >
+                        <li>{ `${token.balance}  `+token.token }</li>
                       </div>
                     </ul>
                   );
