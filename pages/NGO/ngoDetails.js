@@ -1,7 +1,6 @@
 import styles from "../../styles/NgoDetails.module.css";
 import Chips, { Chip } from "react-chips";
 import { useState } from "react";
-import axios from "axios";
 const NgoDetails = () => {
   const onSubmitClickHandler = async (e) => {
     console.log(form);
@@ -9,6 +8,7 @@ const NgoDetails = () => {
       "https://zj0tskm7eh.execute-api.ap-south-1.amazonaws.com/dev/createNgo",
       {
         method: "POST",
+        mode: 'no-cors',
         body: JSON.stringify(form),
       }
     );

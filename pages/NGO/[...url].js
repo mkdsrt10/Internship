@@ -1,14 +1,8 @@
 import { style } from "@material-ui/system";
-import { Bitski } from "bitski";
-
-import WalletConnectProvider from "@walletconnect/web3-provider";
-import Authereum from "authereum";
-
 import styles from "../../styles/PublicNgo.module.css";
 import Web3 from "web3";
-import Web3Modal from "web3modal";
 import Select from "react-select";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import options from "../../utility/crypto_options";
 const PublicNgoPage = () => {
   const [form, setForm] = useState({
@@ -17,49 +11,40 @@ const PublicNgoPage = () => {
     name: "",
     email: "",
   });
-  const connect_wallet = async (e) => {
-    const providerOptions = {
-      walletconnect: {
-        package: WalletConnectProvider, // required
-        options: {
-          infuraId: "INFURA_ID", // required
-        },
-      },
-      bitski: {
-        package: Bitski, // required
-        options: {
-          clientId: "BITSKI_CLIENT_ID", // required
-          callbackUrl: "BITSKI_CALLBACK_URL", // required
-        },
-      },
-      authereum: {
-        package: Authereum, // required
-      },
-    };
-
-    const web3Modal = new Web3Modal({
-      network: "mainnet", // optional
-      cacheProvider: true, // optional
-      providerOptions, // required
-    });
-
-    const provider = await web3Modal.connect();
-
-    const web3 = new Web3(provider);
-    web3.eth.getAccounts().then((accounts) => {
-        web3.eth
-          .sendTransaction({
-            from: accounts[0],
-            to: "0x1494786A31398eeA2E4262857EC70147aed94220",
-            value: form.amount,
-          })
-          .then(function (receipt) {
-            console.log(receipt);
-          });
-    });
+  useEffect(() => {
+    if (!ethEnabled()) {
+      alert("Please install MetaMask to Connect your Wallet to Donate!");
+    }
+  }, []);
+  const ethEnabled = async () => {
+    if (window.ethereum) {
+      await window.ethereum.send("eth_requestAccounts");
+      window.web3 = new Web3(window.ethereum);
+      return true;
+    }
+    return false;
   };
-  console.log()
+  const connect_wallet = async (e) => {
+    if (!ethEnabled()) {
+      alert("Please install MetaMask to Connect your Wallet to Donate!");
+    } else {
+      if (window.web3.eth !== null) {
+        window.web3.eth.getAccounts().then((accounts) => {
+          web3.eth
+            .sendTransaction({
+              from: accounts[0],
+              to: "0x6A64FdFA665EC5445b6F4cb9C6daF2B29b414A9f",
+              value: form.amount,
+            })
+            .then(function (receipt) {
+              console.log(receipt);
+            });
+        });
+      }
+    }
+  };
 
+  console.log();
 
   return (
     <div className={styles.main_container}>

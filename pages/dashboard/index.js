@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Home from "../../components/DashBoard/Home";
 import styles from "../../styles/Dashboard.module.css";
-
 import { withSSRContext } from "aws-amplify";
 import "../../src/config_Amplify";
 import { menu_items } from "../../utility/constant";
@@ -10,8 +9,10 @@ import { useRouter } from "next/router";
 const ui = "Home";
 const DashBoard = ({ user, dashboard, setDashboard }) => {
   useEffect(() => {
+  
     setDashboard(false);
   }, []);
+
   const router = useRouter();
   return (
     <div className={styles.main_container}>
