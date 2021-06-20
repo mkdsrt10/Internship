@@ -5,18 +5,30 @@ import data from "../../utility/data";
 import Transaction_Table from "../Transaction_Table";
 import { useEffect, useState } from "react";
 import router from "next/router";
-import { Bitski } from "bitski";
-import tokenABI from "../../utility/tokenABI";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-import Authereum from "authereum";
 import Web3 from "web3";
-
-import Web3Modal from "web3modal";
-const Home = ({Token}) => {
+import tokenABI from "../../utility/tokenABI";
+import randomcolor from "randomcolor";
+import tokenAddresses from "../../utility/tokenAddress";
+const Home = () => {
   const d = new Date();
   const [Greetings, setGreetings] = useState("");
   const time = d.getHours();
   const [wallet, setWallet] = useState(false);
+  const [Token, setToken] = useState([{}]);
+
+  const ethEnabled = () => {
+    if (window.web3 && window !== undefined) {
+      window.web3 = new Web3(window.web3.currentProvider);
+      window.ethereum.enable();
+      if (window.web3.eth !== undefined) {
+        setWallet(true);
+      } else {
+        setWallet(false);
+      }
+      return true;
+    }
+    return false;
+  };
   useEffect(() => {
     if (time >= 5 && time <= 12) {
       setGreetings("Good Morning");
@@ -27,44 +39,88 @@ const Home = ({Token}) => {
     } else {
       setGreetings("Good Night");
     }
-    ConnectWalletHandler();
+    const getAccounts = async () => {
+      window.web3 = new Web3(window.web3.currentProvider);
+      window.ethereum.enable();
+      window.web3.eth.getAccounts().then((accounts) => {
+        window.web3.eth
+          .getTransactionCount(accounts[0])
+          .then((b = console.log) => {
+            console.log(b);
+            for (var i = 0; i < b; i++) {
+              window.web3.eth.getBlock(b - i).then((Block) => {
+                const a = [Block.hash];
+                console.log(a);
+                var iterator = a.values();
+                for (let elements of iterator) {
+                  window.web3.eth
+                    .getTransactionFromBlock(elements)
+                    .then(console.log);
+                }
+              });
+            }
+          });
+      });
+    };
+    const getTokens = async () => {
+      window.web3 = new Web3(window.web3.currentProvider);
+      window.ethereum.enable();
+      window.web3.eth.getAccounts().then(async (accounts) => {
+        const balance = await web3.eth.getBalance(accounts[0]);
+        console.log("balance :", balance);
+        const TokenDetails = [];
+        TokenDetails.push({
+          token: "ETH",
+          balance: balance,
+          fill: randomcolor({ luminosity: "bright" }),
+        });
+        const tokenBalances = await Promise.all(
+          tokenAddresses.map(async (token) => {
+            const tokenInst = new web3.eth.Contract(tokenABI, token.address);
+            const balance = await tokenInst.methods
+              .balanceOf(accounts[0])
+              .call();
+            console.log("balance: ", balance);
+            console.log("token name :", token.token);
+            console.log("tokenBalances : ", tokenBalances);
+            TokenDetails.push({
+              token: token.token,
+              balance: 1,
+              fill: randomcolor({ luminosity: "bright" }),
+            });
+
+            return {
+              token: token.token,
+              balance,
+            };
+          })
+        );
+        setToken(TokenDetails);
+        console.log(TokenDetails);
+        return {
+          balance: window.web3.utils.fromWei(balance, "ether"),
+          tokens: tokenBalances,
+        };
+      });
+    };
+    if (!ethEnabled) {
+      alert("Please install MetaMask to use this dApp!");
+    } else {
+      window.web3 = new Web3(window.web3.currentProvider);
+      window.ethereum.enable();
+      if (window.web3.eth !== undefined) {
+        getAccounts();
+        getTokens();
+        setWallet(true);
+      } else {
+        setWallet(false);
+      }
+    }
   }, []);
-  const ConnectWalletHandler=async(e)=>{
-     const providerOptions = {
-       walletconnect: {
-         package: WalletConnectProvider, // required
-         options: {
-           infuraId: "INFURA_ID", // required
-         },
-       },
-       bitski: {
-         package: Bitski, // required
-         options: {
-           clientId: "BITSKI_CLIENT_ID", // required
-           callbackUrl: "BITSKI_CALLBACK_URL", // required
-         },
-       },
-       authereum: {
-         package: Authereum, // required
-       },
-     };
-     const web3Modal = new Web3Modal({
-       network: "mainnet", // optional
-       cacheProvider: true, // optional
-       providerOptions, // required
-     });
 
-     const provider = await web3Modal.connect();
-     const web3 = new Web3(provider);
-     if(web3!=undefined){
-       setWallet(true);
-     }
-    
-  }
-  const ViewNgoPageHandler=(e)=>{
-    router.push("/NGO/vipnipvin")
-
-  }
+  const ViewNgoPageHandler = (e) => {
+    router.push("/NGO/vipnipvin");
+  };
   const data01 = [
     { name: "Group A", value: 400, fill: "#cecece" },
     { name: "Group B", value: 300, fill: "#FF5733" },
@@ -73,7 +129,6 @@ const Home = ({Token}) => {
     { name: "Group E", value: 278, fill: "#6C33FF" },
     { name: "Group F", value: 189, fill: "#E733FF" },
   ];
-  
 
   return (
     <div className={styles.home}>
@@ -139,7 +194,7 @@ const Home = ({Token}) => {
         <div className={styles.wallet_title}>Wallet Overview</div>
         {wallet == false ? (
           <div className={styles.connect_wallet}>
-            <button onClick={ConnectWalletHandler}>CONNECT YOUR WALLET</button>
+            <button onClick={ethEnabled}>CONNECT YOUR WALLET</button>
             <div>Read about wallets here</div>
           </div>
         ) : (
@@ -157,11 +212,11 @@ const Home = ({Token}) => {
                 <Tooltip />
               </PieChart>
               <div className={styles.list_items}>
-                {Token.map((token,index) => {
+                {Token.map((token, index) => {
                   return (
                     <ul key={index}>
-                      <div style={{color:token.fill}} >
-                        <li>{ `${token.balance}  `+token.token }</li>
+                      <div style={{ color: token.fill }}>
+                        <li>{`${token.balance}  ` + token.token}</li>
                       </div>
                     </ul>
                   );

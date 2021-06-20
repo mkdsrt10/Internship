@@ -13,13 +13,9 @@
     "@material-ui/icons": "^4.11.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.22",
-    "@walletconnect/web3-provider": "^1.4.1",
-    "authereum": "^0.0.1",
     "aws-amplify": "^3.4.3",
     "axios": "^0.21.1",
-    "bitski": "^0.11.0-beta.4",
     "emotion": "^11.0.0",
-    "ethereumjs-abi": "^0.6.8",
     "next": "^10.2.3",
     "next-pagination": "^2.1.1",
     "randomcolor": "^0.6.2",
@@ -32,8 +28,7 @@
     "react-sanity-pagination": "^2.0.2",
     "react-select": "^4.3.1",
     "recharts": "^2.0.9",
-    "web3": "^1.3.6",
-    "web3modal": "^1.9.3"
+    "web3": "^1.3.6"
   },
   "devDependencies": {
     "@types/react-select": "^4.0.15",
